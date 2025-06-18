@@ -277,7 +277,7 @@ body.fade-out {
 }
 
 header {
-   position: fixed;
+   
   top: 0;
   left: 0;
   width: 100%;
@@ -294,16 +294,6 @@ header {
   align-items: center;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle line */
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(17, 17, 17, 0.5);  /* semi-transparent dark */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: -1; /* behind the nav content */
 }
 
 section {
