@@ -116,10 +116,9 @@
   });
 </script>
 <script>
-  history.pushState(null, "", window.location.href);
-  window.addEventListener("popstate", () => {
-    location.replace("sasank484.github.io/index.html");
-  });
+ if (document.referrer === "" || !document.referrer.includes(location.hostname)) {
+    window.location.href = "index.html";
+  }
 </script>
 </body>
 </html>
