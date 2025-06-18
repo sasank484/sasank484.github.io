@@ -98,5 +98,11 @@
     nav.classList.toggle('show');
   });
 </script>
+<script>
+  // If user goes back in history, redirect to home page
+  window.addEventListener('popstate', function() {
+    window.location.href = 'index.html';
+  });
+</script>
 </body>
 </html>
