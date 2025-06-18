@@ -292,7 +292,7 @@ header {
   align-items: center;
 }
 
-@media (min-width: 1081px) {
+@media (min-width: 769px) {
   .menu-toggle {
     display: none !important; /* force hide on big screens */
   }
