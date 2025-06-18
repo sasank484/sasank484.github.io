@@ -292,14 +292,8 @@ header {
   align-items: center;
 }
 
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important; /* force hide on big screens */
-  }
-  nav {
-    display: flex;
-    gap: 30px;
-  }
+.menu-toggle {
+  display: none; /* always hidden by default */
 }
 
 
