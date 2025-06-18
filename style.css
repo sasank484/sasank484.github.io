@@ -311,27 +311,27 @@ header nav {
 }
 
 /* === MOBILE NAV === */
-@media (max-width: 768px), (pointer: coarse) {
-  header {
-    position: relative; /* ensure nav is absolute to header */
-  }
+header {
+  position: relative;  /* super important for absolute nav! */
+}
 
+/* Mobile nav behavior */
+@media (max-width: 1080px), (pointer: coarse) {
   header nav {
     position: absolute;
     top: 100%;
-    right: 0;      /* align to right edge instead of left */
-    left: auto;    /* override left: 0; */
-    width: auto;   /* auto width, or set a fixed width */
-    min-width: 200px; /* optional */
+    right: 0;
+    left: auto; /* IMPORTANT: disables left edge anchoring */
+    width: 200px;  /* or auto, or your preferred dropdown width */
     background: rgba(17, 17, 17, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
-    align-items: flex-start; /* or center, your choice */
+    align-items: flex-start; /* links left-aligned inside box */
     display: none;
     gap: 20px;
     padding: 20px;
-    border-radius: 5px; /* optional for a clean box look */
+    border-radius: 5px;
   }
 
   header nav.show {
