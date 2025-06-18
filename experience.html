@@ -92,11 +92,8 @@
   });
 </script>
 <script>
-  history.pushState(null, document.title, window.location.href);
-
-  window.addEventListener('popstate', function () {
-    // Always redirect to home
-    window.location.href = 'index.html';
+  window.addEventListener('popstate', () => {
+    location.href = 'index.html';
   });
 </script>
 </body>
