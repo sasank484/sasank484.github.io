@@ -237,6 +237,7 @@
   });
 </script>
 <script>
+  history.pushState(null, "", window.location.href);
   window.addEventListener('popstate', () => {
     location.href = 'index.html';
   });
