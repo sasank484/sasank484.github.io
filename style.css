@@ -292,24 +292,6 @@ header {
   align-items: center;
 }
 
-
-
-/* === DESKTOP NAV === (stick to top, blur background) */
-@media (min-width: 1081px) {
-  header {
-    position: sticky;      /* stays at top while scrolling */
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background: rgba(17, 17, 17, 0.5);  /* semi-transparent dark */
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   header nav {
     display: flex;
     gap: 30px;
@@ -318,7 +300,7 @@ header {
   .menu-toggle {
     display: none;  /* hide hamburger on desktop */
   }
-}
+
 
 /* === MOBILE NAV === (dropdown, hamburger toggle) */
 @media (max-width: 1080px), (pointer: coarse) {
