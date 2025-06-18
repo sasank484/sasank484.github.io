@@ -69,5 +69,23 @@
       <a href="https://github.com/sasank484" target="_blank"><i class="fa-brands fa-github"></i></a>
     </div>
   </div>
+   <script>
+    // Remove fade-out on page load
+    document.body.classList.remove('fade-out');
+
+    // Add fade-out when clicking any nav link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // Duration matches CSS transition
+        }
+      });
+    });
+  </script>
 </body>
 </html>

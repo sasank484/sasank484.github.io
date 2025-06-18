@@ -62,5 +62,23 @@
       <p>Engineered an IoT-based pollution detection dashboard, processed real-time sensor data, and visualized pollutant levels with MATLAB.</p>
     </div>
   </div>
+ <script>
+    // Remove fade-out on page load
+    document.body.classList.remove('fade-out');
+
+    // Add fade-out when clicking any nav link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // Duration matches CSS transition
+        }
+      });
+    });
+  </script>
 </body>
 </html>
