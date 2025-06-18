@@ -277,20 +277,21 @@ body.fade-out {
 }
 
 header {
-  position: fixed;
+   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  backdrop-filter: blur(10px); /* This does the blur! */
-  background: rgba(17, 17, 17, 0.7); /* semi-transparent dark bg */
+
+  /* 🔑 The magic combo: semi-transparent + blur */
+  background: rgba(17, 17, 17, 0.5);   /* semi-transparent black */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* for Safari support */
+
   z-index: 999;
   padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle border for elegance */
-}
 
-section {
-  margin-top: 140px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle line */
 }
