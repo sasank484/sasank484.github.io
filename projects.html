@@ -116,9 +116,14 @@
   });
 </script>
 <script>
- if (document.referrer === "" || !document.referrer.includes(location.hostname)) {
+  // If no referrer OR tiny history stack, redirect to Home
+  if (document.referrer === "" || window.history.length <= 1) {
     window.location.href = "index.html";
   }
 </script>
+
+<noscript>
+  <meta http-equiv="refresh" content="0; url=index.html" />
+</noscript>
 </body>
 </html>
