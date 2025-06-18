@@ -298,7 +298,7 @@ header {
 }
 
 section {
-  margin-top: 140px; /* adjust to your header height */
+  margin-top: 120px; /* adjust to your header height */
 }
 
 main,
@@ -308,5 +308,5 @@ section,
 .experience-container,
 .projects-container,
 .contact-container {
-  margin-top: 140px; 
+  margin-top: 120px; 
 }
