@@ -226,19 +226,19 @@ span{
 
 @keyframes words{
     0%, 20%{
-        content: "Data Engineer";
+        content: "I'm a Data Engineer";
     }
     21%, 40%{
-        content: "Data Analyst";
+        content: "I'm a Data Analyst";
     }
     41%, 60%{
-        content: "Business Analyst";
+        content: "I'm a Business Analyst";
     }
     61%, 80%{
-        content: "ML Engineer";
+        content: "I'm a ML Engineer";
     }
     81%, 100%{
-        content: "AI Engineer";
+        content: "I'm an AI Engineer";
     }
 }
 
