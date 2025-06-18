@@ -278,8 +278,7 @@ body.fade-out {
 
 header {
    
-  top: 0;
-  left: 0;
+  
   width: 100%;
 
   /* 🔑 The magic combo: semi-transparent + blur */
