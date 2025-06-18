@@ -116,12 +116,12 @@
   });
 </script>
 <script>
-  window.onbeforeunload = function() {
-    history.pushState(null, '', location.href);
-  };
-  window.onpopstate = function() {
-    location.href = 'index.html';
-  };
+   window.addEventListener('pageshow', function(event) {
+    // If page is restored from Back/Forward cache, go to index.html
+    if (event.persisted) {
+      window.location.replace('index.html');
+    }
+  });
 </script>
 </body>
 </html>
