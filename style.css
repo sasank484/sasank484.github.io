@@ -275,3 +275,20 @@ body {
 body.fade-out {
     opacity: 0;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  z-index: 999;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section {
+  margin-top: 140px;
+}
