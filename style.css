@@ -363,6 +363,7 @@ header {
   background: rgba(255, 255, 255, 0.02);
   padding: 20px;
   border-radius: 10px;
+  min-height: 70px;
 }
 
 .edu-details {
@@ -370,7 +371,7 @@ header {
 }
 
 .edu-logo {
-  height: 50px;
+  max-height: 50px;
   width: auto;
   object-fit: contain;
 }
