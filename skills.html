@@ -6,6 +6,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <title>Skills - Sasank</title>
+  <style>
+    .skills-container {
+      max-width: 900px;
+      margin: 120px auto 50px; /* Adds top margin so it clears the fixed header */
+      background-color: #111;
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    .skills-container h1 {
+      font-size: 3rem;
+      color: #b74b4b;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.8rem;
+    }
+
+    th, td {
+      padding: 12px 20px;
+      border: 1px solid #444;
+      text-align: left;
+    }
+
+    th {
+      background-color: #b74b4b;
+      color: black;
+    }
+
+    tr:nth-child(even) {
+      background-color: #222;
+    }
+
+    tr:hover {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,14 +59,38 @@
     </nav>
   </header>
 
-  <section>
+  <div class="skills-container">
     <h1>Skills</h1>
-    <p>Languages: Python, Java, C++, R, SQL</p>
-    <p>Databases: SQL Server, MySQL, Oracle, PostgreSQL, MongoDB</p>
-    <p>Machine Learning: Spark MLlib, TensorFlow, NumPy, Sklearn</p>
-    <p>Business Intelligence: Tableau, Power BI, Seaborn, Excel</p>
-    <p>Big Data: Apache Spark (PySpark), Hadoop, NoSQL (MongoDB)</p>
-    <p>Cloud Technologies: AWS, Google Cloud, Databricks</p>
-  </section>
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td>Languages</td>
+        <td>Python, Java, C++, R, SQL</td>
+      </tr>
+      <tr>
+        <td>Databases</td>
+        <td>SQL Server, MySQL, Oracle, PostgreSQL, MongoDB</td>
+      </tr>
+      <tr>
+        <td>Machine Learning</td>
+        <td>Spark MLlib, TensorFlow, NumPy, Sklearn</td>
+      </tr>
+      <tr>
+        <td>Business Intelligence</td>
+        <td>Tableau, Power BI, Seaborn, Excel</td>
+      </tr>
+      <tr>
+        <td>Big Data</td>
+        <td>Apache Spark (PySpark), Hadoop, NoSQL (MongoDB)</td>
+      </tr>
+      <tr>
+        <td>Cloud Technologies</td>
+        <td>AWS, Google Cloud, Databricks</td>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
