@@ -312,19 +312,26 @@ header nav {
 
 /* === MOBILE NAV === */
 @media (max-width: 768px), (pointer: coarse) {
+  header {
+    position: relative; /* ensure nav is absolute to header */
+  }
+
   header nav {
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
+    right: 0;      /* align to right edge instead of left */
+    left: auto;    /* override left: 0; */
+    width: auto;   /* auto width, or set a fixed width */
+    min-width: 200px; /* optional */
     background: rgba(17, 17, 17, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* or center, your choice */
     display: none;
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px;
+    border-radius: 5px; /* optional for a clean box look */
   }
 
   header nav.show {
