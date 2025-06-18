@@ -303,7 +303,7 @@ header {
 
 
 /* === MOBILE NAV === (dropdown, hamburger toggle) */
-@media (max-width: 1080px), (pointer: coarse) {
+@media (max-width: 768px), (pointer: coarse) {
   header {
     position: relative;    /* NOT sticky on mobile */
     width: 100%;
