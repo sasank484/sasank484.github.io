@@ -116,11 +116,9 @@
   });
 </script>
 <script>
-   window.addEventListener('pageshow', function(event) {
-    // If page is restored from Back/Forward cache, go to index.html
-    if (event.persisted) {
-      window.location.replace('index.html');
-    }
+   window.addEventListener('unload', function() {
+    // When leaving this page (Back or direct nav), always jump to Home
+    location.href = 'index.html';
   });
 </script>
 </body>
