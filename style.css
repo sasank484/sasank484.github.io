@@ -297,10 +297,7 @@ header {
 /* === DESKTOP NAV === */
 header nav {
     display: flex;
-  flex-wrap: wrap;     /* ✅ allow nav items to wrap to next line if needed */
-  overflow-x: auto;    /* ✅ allow horizontal scroll if links overflow */
-  white-space: nowrap; /* ✅ keep links on single lines (no breaking in middle) */
-  gap: 30px;           /* your existing gap between links */
+  gap: 30px;
 }
 
 /* === HAMBURGER ICON === */
@@ -314,10 +311,10 @@ header nav {
 }
 
 /* === MOBILE NAV === */
-@media (max-width: 1080px) {
+@media (max-width: 768px), (pointer: coarse) {
   header nav {
     position: absolute;
-    top: 100%; /* directly below header */
+    top: 100%;
     left: 0;
     right: 0;
     background: rgba(17, 17, 17, 0.95);
@@ -325,16 +322,16 @@ header nav {
     -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: center;
-    display: none;   /* hidden by default */
+    display: none;
     gap: 20px;
     padding: 20px 0;
   }
 
   header nav.show {
-    display: flex;   /* show on toggle */
+    display: flex;
   }
 
   .menu-toggle {
-    display: block;  /* show hamburger on small screens */
+    display: block;
   }
 }
