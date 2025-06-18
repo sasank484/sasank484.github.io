@@ -99,8 +99,10 @@
   });
 </script>
 <script>
-  // If user goes back in history, redirect to home page
-  window.addEventListener('popstate', function() {
+  history.pushState(null, document.title, window.location.href);
+
+  window.addEventListener('popstate', function () {
+    // Always redirect to home
     window.location.href = 'index.html';
   });
 </script>
