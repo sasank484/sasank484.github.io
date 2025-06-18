@@ -281,12 +281,14 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #111;
+  backdrop-filter: blur(10px); /* This does the blur! */
+  background: rgba(17, 17, 17, 0.7); /* semi-transparent dark bg */
   z-index: 999;
   padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle border for elegance */
 }
 
 section {
