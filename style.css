@@ -277,7 +277,7 @@ body.fade-out {
 }
 
 header {
-  position: sticky;   /* or position: fixed; */
+  position: fixed;   /* or position: fixed; */
   top: 0;
   width: 100%;
   backdrop-filter: blur(12px);
