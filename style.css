@@ -296,8 +296,11 @@ header {
 
 /* === DESKTOP NAV === */
 header nav {
-  display: flex;
-  gap: 30px;
+    display: flex;
+  flex-wrap: wrap;     /* ✅ allow nav items to wrap to next line if needed */
+  overflow-x: auto;    /* ✅ allow horizontal scroll if links overflow */
+  white-space: nowrap; /* ✅ keep links on single lines (no breaking in middle) */
+  gap: 30px;           /* your existing gap between links */
 }
 
 /* === HAMBURGER ICON === */
