@@ -6,6 +6,47 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <title>Projects - Sasank</title>
+  <style>
+    .projects-container {
+      max-width: 900px;
+      margin: 120px auto 50px;
+      background-color: #111;
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    .projects-container h1 {
+      font-size: 4rem;
+      color: #b74b4b;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .project-item {
+      margin-bottom: 40px;
+    }
+
+    .project-item h3 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: #b74b4b;
+    }
+
+    .project-item p {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .project-item a {
+      font-size: 1.6rem;
+      color: #b74b4b;
+      text-decoration: underline;
+    }
+
+    .project-item a:hover {
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,29 +61,49 @@
     </nav>
   </header>
 
-  <section>
+  <div class="projects-container">
     <h1>Projects</h1>
 
-    <h3>Analysis of Pandemic’s Impact on Healthcare Systems and Happiness Index</h3>
-    <p>Built a real-time pipeline using COVID Python library, World Happiness Report, and vaccination datasets. Applied Random Forest, Decision Tree, Naive Bayes, and Ensemble Learning to boost classification accuracy to 92.5%. 
-    <br>
-    <a href="https://github.com/sasank484/Analysis-on-pandemic-s-impact-on-healthcare-system-and-happiness-index-using-Machine-algorithms" target="_blank">View on GitHub</a></p>
+    <div class="project-item">
+      <h3>Analysis of Pandemic’s Impact on Healthcare Systems and Happiness Index</h3>
+      <p>Built a real-time pipeline using COVID Python library, World Happiness Report, and vaccination datasets. Applied Random Forest, Decision Tree, Naive Bayes, and Ensemble Learning to boost classification accuracy to 92.5%.</p>
+      <a href="https://github.com/sasank484/Analysis-on-pandemic-s-impact-on-healthcare-system-and-happiness-index-using-Machine-algorithms" target="_blank">View on GitHub</a>
+    </div>
 
-    <h3>Customer Churn Prediction in Telecom Industry</h3>
-    <p>Developed a NoSQL database with MongoDB on Docker, used Databricks for big data processing, performed data preprocessing with PySpark and Pandas, achieving model accuracy of 80% with Gradient Boosting.
-    <br>
-    <a href="https://github.com/sasank484/CUSTOMER-CHURN-PREDICTION-IN-TELECOM-INDUSTRY" target="_blank">View on GitHub</a></p>
+    <div class="project-item">
+      <h3>Customer Churn Prediction in Telecom Industry</h3>
+      <p>Developed a NoSQL database with MongoDB on Docker, used Databricks for big data processing, performed data preprocessing with PySpark and Pandas, achieving model accuracy of 80% with Gradient Boosting.</p>
+      <a href="https://github.com/sasank484/CUSTOMER-CHURN-PREDICTION-IN-TELECOM-INDUSTRY" target="_blank">View on GitHub</a>
+    </div>
 
-    <h3>Target Retail Market Analysis and Strategic Recommendations</h3>
-    <p>Analyzed Target’s sales decline using surveys and Tableau. Provided actionable insights and strategic recommendations for digital transformation and omnichannel growth.
-    <br>
-    <a href="https://github.com/sasank484/Target-market-analysis-and-strategic-recommendations" target="_blank">View on GitHub</a></p>
+    <div class="project-item">
+      <h3>Target Retail Market Analysis and Strategic Recommendations</h3>
+      <p>Analyzed Target’s sales decline using surveys and Tableau. Provided actionable insights and strategic recommendations for digital transformation and omnichannel growth.</p>
+      <a href="https://github.com/sasank484/Target-market-analysis-and-strategic-recommendations" target="_blank">View on GitHub</a>
+    </div>
 
-    <h3>Optimized Climate Data Integration with Real-Time LLM Querying</h3>
-    <p>Preprocessed large-scale climate datasets, engineered custom MCP servers to integrate SQLite with LLMs for real-time AI-driven insights.
-    <br>
-    <a href="https://github.com/sasank484/Optimized-Climate-Data-Integration-with-Real-Time-LLM-Querying" target="_blank">View on GitHub</a></p>
+    <div class="project-item">
+      <h3>Optimized Climate Data Integration with Real-Time LLM Querying</h3>
+      <p>Preprocessed large-scale climate datasets, engineered custom MCP servers to integrate SQLite with LLMs for real-time AI-driven insights.</p>
+      <a href="https://github.com/sasank484/Optimized-Climate-Data-Integration-with-Real-Time-LLM-Querying" target="_blank">View on GitHub</a>
+    </div>
+  </div>
 
-  </section>
+  <!-- ✅ Add fade-out script for page transitions -->
+  <script>
+    document.body.classList.remove('fade-out');
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
