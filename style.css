@@ -296,6 +296,10 @@ header {
   .menu-toggle {
     display: none !important; /* force hide on big screens */
   }
+  nav {
+    display: flex;
+    gap: 30px;
+  }
 }
 
 
