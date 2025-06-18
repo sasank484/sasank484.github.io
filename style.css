@@ -294,51 +294,70 @@ header {
 
 
 
-/* === DESKTOP NAV === */
-header nav {
+/* === DESKTOP NAV === (stick to top, blur background) */
+@media (min-width: 1081px) {
+  header {
+    position: sticky;      /* stays at top while scrolling */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(17, 17, 17, 0.5);  /* semi-transparent dark */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px 50px;
     display: flex;
-  gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  .menu-toggle {
+    display: none;  /* hide hamburger on desktop */
+  }
 }
 
-/* === HAMBURGER ICON === */
-.menu-toggle {
-  display: none;      /* hidden by default */
-  font-size: 30px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* === MOBILE NAV === */
-header {
-  position: relative;  /* super important for absolute nav! */
-}
-
-/* Mobile nav behavior */
+/* === MOBILE NAV === (dropdown, hamburger toggle) */
 @media (max-width: 1080px), (pointer: coarse) {
+  header {
+    position: relative;    /* NOT sticky on mobile */
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   header nav {
     position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto; /* IMPORTANT: disables left edge anchoring */
-    width: 200px;  /* or auto, or your preferred dropdown width */
+    top: 100%;             /* directly below header */
+    right: 0;              /* align dropdown to hamburger on right */
+    left: auto;            /* disable left edge so it aligns right */
+    width: 200px;          /* set width of dropdown */
     background: rgba(17, 17, 17, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
-    align-items: flex-start; /* links left-aligned inside box */
-    display: none;
+    align-items: flex-start;
+    display: none;         /* hidden by default */
     gap: 20px;
     padding: 20px;
     border-radius: 5px;
   }
 
   header nav.show {
-    display: flex;
+    display: flex;         /* show when toggled */
   }
 
   .menu-toggle {
-    display: block;
+    display: block;        /* show hamburger on mobile */
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
 }
