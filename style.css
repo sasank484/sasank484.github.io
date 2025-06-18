@@ -314,7 +314,7 @@ header nav {
 }
 
 /* === MOBILE NAV === */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   header nav {
     position: absolute;
     top: 100%; /* directly below header */
