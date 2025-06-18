@@ -92,10 +92,9 @@
   });
 </script>
 <script>
-  history.pushState(null, "", window.location.href);
-  window.addEventListener('popstate', () => {
-    location.href = 'index.html';
-  });
+ history.pushState(null, "", window.location.href);
+  window.addEventListener("popstate", () => {
+    location.replace("index.html");
 </script>
 </body>
 </html>
