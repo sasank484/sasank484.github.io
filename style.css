@@ -278,7 +278,9 @@ body.fade-out {
 
 header {
    
-  
+   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
 
   /* 🔑 The magic combo: semi-transparent + blur */
@@ -297,4 +299,14 @@ header {
 
 section {
   margin-top: 140px; /* adjust to your header height */
+}
+
+main,
+section,
+.skills-container,
+.education-container,
+.experience-container,
+.projects-container,
+.contact-container {
+  margin-top: 140px; 
 }
