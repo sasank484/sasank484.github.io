@@ -291,3 +291,47 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+
+
+/* === DESKTOP NAV === */
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+/* === HAMBURGER ICON === */
+.menu-toggle {
+  display: none;      /* hidden by default */
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* === MOBILE NAV === */
+@media (max-width: 768px) {
+  header nav {
+    position: absolute;
+    top: 100%; /* directly below header */
+    left: 0;
+    right: 0;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    display: none;   /* hidden by default */
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  header nav.show {
+    display: flex;   /* show on toggle */
+  }
+
+  .menu-toggle {
+    display: block;  /* show hamburger on small screens */
+  }
+}
