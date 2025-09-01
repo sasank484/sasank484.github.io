@@ -1,44 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
   <title>Experience - Sasank</title>
-  <style>
-    .experience-container {
-      max-width: 800px;
-      margin: 120px auto 50px;
-      background-color: #111;
-      padding: 40px;
-      border-radius: 10px;
-    }
 
-    .experience-container h1 {
-      font-size: 4rem;
-      color: #b74b4b;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-    .exp-item {
-      margin-bottom: 30px;
-    }
-
-    .exp-item h3 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #b74b4b;
-    }
-
-    .exp-item p {
-      font-size: 1.8rem;
-    }
-  </style>
+  <!-- Your site CSS -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    
   <header>
     <a href="index.html" class="logo">Sasank Chithirala</a>
     <nav>
@@ -47,51 +20,111 @@
       <a href="skills.html">Skills</a>
       <a href="education.html">Education</a>
       <a href="experience.html" class="active">Experience</a>
-      <a href = "certifications.html">Certifications</a>
+      <a href="certifications.html">Certifications</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <button class="menu-toggle">&#9776;</button> 
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
   </header>
 
-  <div class="experience-container">
-    <h1>Experience</h1>
-    <div class="exp-item">
-      <h3><i class="fa-solid fa-briefcase"></i> George Mason University</h3>
-      <p style="color:#b74b4b;">Student Teacher & Research Assistant - Computational Data Science</p>
-      <p>Analyzed student grade data, created interactive Power BI dashboards, and configured AWS S3 for scalable data storage.</p>
+  <main class="xp-wrap">
+    <div class="xp-head">
+      <h1>Experience</h1>
+      <p class="xp-sub">Hands-on work across data engineering, analytics, and cloud.</p>
     </div>
-    <div class="exp-item">
-      <h3><i class="fa-solid fa-briefcase"></i> ACS Solutions</h3>
-      <p style="color:#b74b4b;">IoT Intern</p>
-      <p>Engineered an IoT-based pollution detection dashboard, processed real-time sensor data, and visualized pollutant levels with MATLAB.</p>
-    </div>
-  </div>
- <script>
-    // Remove fade-out on page load
-    document.body.classList.remove('fade-out');
 
-    // Add fade-out when clicking any nav link
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href && href !== '#') {
+    <section class="xp-timeline">
+
+      <!-- George Mason University -->
+      <article class="xp-card">
+        <div class="xp-line"><span class="dot"></span></div>
+
+        <div class="xp-card-body">
+          <header class="milestone-meta">
+            <div class="org-badge">
+              <!-- Put your logo at /images/gmu.png (ideally transparent PNG or SVG) -->
+              <img src="logos/gmu_logo.png" alt="George Mason University logo" loading="lazy">
+            </div>
+            <div class="meta-txt">
+              <h3><i class="fa-solid fa-briefcase"></i> George Mason University</h3>
+              <div class="role">Student Teacher &amp; Research Assistant — Computational Data Science</div>
+              <div class="dates">Aug 2024 — Present</div>
+            </div>
+          </header>
+
+          <ul class="xp-points">
+            <li>Assisted <strong>100+ students</strong> building end-to-end cloud analytics workflows—from ingestion to scalable storage and distributed processing.</li>
+            <li>Engineered data transformation pipelines with <strong>PySpark in Zeppelin</strong>, accelerating insights on unstructured datasets.</li>
+            <li>Orchestrated <strong>MapReduce</strong> jobs on distributed VMs for parallel big-data analysis.</li>
+            <li>Managed scalable cloud storage with <strong>AWS S3 + CLI</strong>, integrating virtualization and cloud networking for robust analytics infra.</li>
+          </ul>
+
+          <div class="xp-tags">
+            <span class="xp-pill pyspark">PySpark</span>
+            <span class="xp-pill zeppelin">Zeppelin</span>
+            <span class="xp-pill mapreduce">MapReduce</span>
+            <span class="xp-pill aws">AWS</span>
+            <span class="xp-pill s3">S3</span>
+            <span class="xp-pill vm">VMs</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ACS Solutions -->
+      <article class="xp-card">
+        <div class="xp-line"><span class="dot"></span></div>
+
+        <div class="xp-card-body">
+          <header class="milestone-meta">
+            <div class="org-badge">
+              <!-- Put your logo at /images/acs-solutions.png -->
+              <img src="logos/acs-solutions.png" alt="ACS Solutions logo" loading="lazy">
+            </div>
+            <div class="meta-txt">
+              <h3><i class="fa-solid fa-briefcase"></i> ACS Solutions</h3>
+              <div class="role">IoT Intern</div>
+              <div class="dates">May 2022 — Jul 2022</div>
+            </div>
+          </header>
+
+          <ul class="xp-points">
+            <li>Built an <strong>IoT-enabled pollution detection</strong> framework on <strong>ThingSpeak Cloud</strong> supporting real-time analytics and visualization.</li>
+            <li>Streamlined ingestion from Wi-Fi sensors to produce time-series datasets with multiple environmental parameters.</li>
+            <li>Performed statistical &amp; trend analysis in <strong>MATLAB</strong>, revealing a <strong>~15% rise</strong> in particulate matter levels.</li>
+            <li>Delivered a cloud-based monitoring system that aligns IoT data capture with analytics for real-time environmental intelligence.</li>
+          </ul>
+
+          <div class="xp-tags">
+            <span class="xp-pill iot">IoT</span>
+            <span class="xp-pill thingspeak">ThingSpeak</span>
+            <span class="xp-pill sensors">Sensors</span>
+            <span class="xp-pill matlab">MATLAB</span>
+            <span class="xp-pill timeseries">Time-series</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- JS (same behavior as other pages) -->
+  <script>
+    // page fade transition
+    document.body.classList.remove('fade-out');
+    document.querySelectorAll('nav a').forEach(link=>{
+      link.addEventListener('click', e=>{
+        const href = link.getAttribute('href');
+        if(href && href !== '#'){
           e.preventDefault();
           document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location.href = href;
-          }, 500); // Duration matches CSS transition
+          setTimeout(()=>{ location.href = href; }, 300);
         }
       });
     });
+
+    // mobile menu toggle
+    document.querySelector('.menu-toggle')?.addEventListener('click', ()=>{
+      document.querySelector('header nav')?.classList.toggle('show');
+    });
   </script>
-  <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('header nav');
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
-</script>
-
 </body>
 </html>
