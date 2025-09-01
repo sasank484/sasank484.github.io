@@ -3,49 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="view-transition" content="same-origin" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <title>Contact - Sasank</title>
+
+  <!-- Page-scoped styles for the contact card -->
   <style>
-    .contact-container {
-      max-width: 700px;
-      margin: 120px auto 50px;
-      text-align: center;
+    :root{
+      --c-bg: #0b0f14;
+      --c-card: #11161d;
+      --c-field: #0f1a26;
+      --c-text: #e6f0ff;
+      --c-muted:#9fb0c2;
+      --c-accent:#22c55e;      /* green accent for the form */
+      --c-accent-ink:#052e16;
+      --c-ring: rgba(34,197,94,.35);
     }
 
-    .contact-container h1 {
-      font-size: 4rem;
-      color: #b74b4b;
-      margin-bottom: 40px;
+    .contact-wrap{
+      max-width: 960px;
+      margin: 110px auto 80px;
+      padding: 0 20px;
     }
 
-    .contact-item {
-      font-size: 2rem;
-      margin: 30px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
+    .contact-card{
+      background: var(--c-card);
+      border: 1px solid rgba(255,255,255,.05);
+      box-shadow: 0 12px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 32px 28px;
+      color: var(--c-text);
     }
 
-    .contact-item i {
-      color: #b74b4b;
-      font-size: 2.5rem;
+    .contact-title{
+      font-size: clamp(2.2rem, 1.2rem + 2vw, 4rem);
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: #34d399;
+      margin: 4px 0 14px;
+    }
+    .contact-sub{
+      color: var(--c-muted);
+      font-size: 1.6rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
 
-    .social-icons {
-      margin-top: 40px;
+    /* Clickable info row (email/phone/link icons) */
+    .contact-quick{
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 22px;
+    }
+    .contact-chip{
+      display:inline-flex; align-items:center; gap:10px;
+      background: #0f1420;
+      border:1px solid rgba(255,255,255,.06);
+      color: var(--c-text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+    .contact-chip i{ opacity:.9; }
+    .contact-chip:hover{
+      border-color: var(--c-accent);
+      box-shadow: 0 0 0 6px var(--c-ring);
     }
 
-    .social-icons a {
-      margin: 0 15px;
+    /* Form */
+    .contact-form{
+      display: grid;
+      gap: 14px;
     }
+    .form-row{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 720px){
+      .form-row{ grid-template-columns: 1fr; }
+    }
+
+    .field{
+      display: grid;
+      gap: 8px;
+    }
+    .field label{
+      font-size: 1.35rem;
+      color: var(--c-muted);
+    }
+    .input, .textarea{
+      width: 100%;
+      background: var(--c-field);
+      color: var(--c-text);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 1.6rem;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease, transform .02s ease;
+    }
+    .textarea{ min-height: 160px; resize: vertical; }
+    .input:focus, .textarea:focus{
+      border-color: var(--c-accent);
+      box-shadow: 0 0 0 6px var(--c-ring);
+    }
+
+    .send-row{
+      margin-top: 8px;
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    }
+    .btn-send{
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--c-accent);
+      color: var(--c-accent-ink);
+      border: none;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .05s ease, box-shadow .15s ease;
+    }
+    .btn-send:hover{ box-shadow: 0 0 0 8px var(--c-ring); }
+    .btn-send:active{ transform: translateY(1px); }
+
+    /* Keep your existing icon row styling if you want it below as well */
+    .social-icons{ margin-top: 28px; }
+    .social-icons a{ margin: 0 10px; font-size: 2.2rem; }
   </style>
 </head>
 <body>
-    
+
   <header>
     <a href="index.html" class="logo">Sasank Chithirala</a>
     <nav>
@@ -57,25 +147,72 @@
       <a href="certifications.html">Certifications</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
-    <button class="menu-toggle">&#9776;</button> 
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
   </header>
 
-  <div class="contact-container">
-    <h1>Contact Me</h1>
-    <div class="contact-item">
-      <i class="fa-solid fa-envelope"></i>
-      <span>sasankchithirala@gmail.com</span>
-    </div>
-    <div class="contact-item">
-      <i class="fa-solid fa-phone"></i>
-      <span>703-801-9727</span>
-    </div>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/sasank-chithirala/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/sasank484" target="_blank"><i class="fa-brands fa-github"></i></a>
-    </div>
-  </div>
-   <script>
+  <main class="contact-wrap">
+    <section class="contact-card">
+      <h1 class="contact-title">I’m open to opportunities</h1>
+      <p class="contact-sub">
+        Whether you’re hiring for a role or need a freelance collaborator, feel free to get in touch.
+      </p>
+
+      <!-- Quick clickable chips -->
+      <div class="contact-quick">
+        <a class="contact-chip" href="mailto:sasankchithirala@gmail.com?subject=Hello%20Sasank">
+          <i class="fa-solid fa-envelope"></i> sasankchithirala@gmail.com
+        </a>
+        <a class="contact-chip" href="tel:+17038019727">
+          <i class="fa-solid fa-phone"></i> +1 (703) 801-9727
+        </a>
+        <a class="contact-chip" href="https://www.linkedin.com/in/sasank-chithirala/" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a class="contact-chip" href="https://github.com/sasank484" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+
+      <!-- Message form -->
+      <form id="contactForm" class="contact-form" autocomplete="on" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input class="input" type="text" id="name" name="name" placeholder="Jane Doe">
+          </div>
+          <div class="field">
+            <label for="email">Email address <span aria-hidden="true" style="color:#ef4444">*</span></label>
+            <input class="input" type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="link">LinkedIn or Website (optional)</label>
+            <input class="input" type="url" id="link" name="link" placeholder="https://linkedin.com/in/you">
+          </div>
+          <div class="field">
+            <label for="role">Opportunity type / role <span aria-hidden="true" style="color:#ef4444">*</span></label>
+            <input class="input" type="text" id="role" name="role" required placeholder="e.g., Data Engineer Internship">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span aria-hidden="true" style="color:#ef4444">*</span></label>
+          <textarea class="textarea" id="message" name="message" required placeholder="Type your message here."></textarea>
+        </div>
+
+        <div class="send-row">
+          <button type="submit" class="btn-send">
+            <i class="fa-regular fa-paper-plane"></i> Send message
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Keep your existing fade and mobile nav behavior -->
+  <script>
     // Remove fade-out on page load
     document.body.classList.remove('fade-out');
 
@@ -86,21 +223,44 @@
         if (href && href !== '#') {
           e.preventDefault();
           document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location.href = href;
-          }, 500); // Duration matches CSS transition
+          setTimeout(() => { window.location.href = href; }, 500);
         }
       });
     });
-  </script>
-  <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('header nav');
 
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
-</script>
-<script src="transitions.js"></script>
+    // Mobile nav
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('header nav');
+    toggle?.addEventListener('click', () => nav.classList.toggle('show'));
+
+    // Form -> open user's email client with prefilled message (mailto)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = (document.getElementById('name').value || '').trim();
+      const email = (document.getElementById('email').value || '').trim();
+      const link = (document.getElementById('link').value || '').trim();
+      const role = (document.getElementById('role').value || '').trim();
+      const message = (document.getElementById('message').value || '').trim();
+
+      if (!email || !role || !message) {
+        alert('Please fill in Email, Opportunity/Role, and Message.');
+        return;
+      }
+
+      const subject = encodeURIComponent(`Portfolio message: ${role}${name ? ' — ' + name : ''}`);
+      const body = encodeURIComponent(
+        `Name: ${name || '—'}\n` +
+        `Email: ${email}\n` +
+        `Link: ${link || '—'}\n` +
+        `Role/Opportunity: ${role}\n\n` +
+        `Message:\n${message}\n`
+      );
+
+      window.location.href = `mailto:sasankchithirala@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+  <script src="transitions.js"></script>
 </body>
 </html>
