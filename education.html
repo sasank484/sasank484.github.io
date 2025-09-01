@@ -7,6 +7,84 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <title>Education - Sasank</title>
+
+  <!-- Page-scoped overrides: stacked, auto-height horizontal cards -->
+  <style>
+    /* ====== HARD RESET just for the education cards ====== */
+    .eduH-wrap, .eduH-wrap * { box-sizing: border-box; }
+    .eduH-wrap * { min-height: 0 !important; }          /* nuke inherited min-heights */
+    .eduH-card { height: auto !important; min-height: 0 !important; overflow: visible !important; }
+
+    /* ====== Layout: one card after another, ends right after content ====== */
+    .eduH-wrap{
+      max-width: 1100px;
+      margin: 110px auto 60px;
+      padding: 0 20px;
+      display: block;                                     /* vertical flow */
+    }
+    .eduH-card{
+      background: linear-gradient(180deg,#121212,#0d0d0d);
+      border: 1px solid rgba(255,255,255,.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 20px 22px;
+      display: grid;                                      /* horizontal card */
+      grid-template-columns: 72px 1fr;                    /* logo | content */
+      column-gap: 16px;
+      align-items: start;
+      margin-bottom: 26px;                                /* space to the next card */
+    }
+    .eduH-card:last-of-type{ margin-bottom: 0; }
+
+    /* logo column */
+    .eduH-logo{
+      width: 72px; height: 72px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      display: grid; place-items: center;
+      overflow: hidden;
+    }
+    .eduH-logo img{ max-width: 74%; max-height: 74%; object-fit: contain; }
+
+    /* main column */
+    .eduH-main{ display: block; }
+
+    .eduH-head{ margin-bottom: 8px; }
+    .eduH-head h2{
+      margin: 0 0 4px 0;
+      font-size: clamp(2.0rem, 1.2rem + 1.2vw, 2.8rem);
+      line-height: 1.15;
+    }
+    .eduH-degree{ color:#e6b0ac; font-size: 1.45rem; }
+    .eduH-meta{ color:#cfcfcf; font-size: 1.35rem; margin-top: 2px; }
+    .eduH-meta b{ color:#fff; }
+
+    /* two content columns (coursework | highlights) */
+    .eduH-body{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 32px;
+      align-items: start;                                  /* keeps compact */
+    }
+    .eduH-col h3{
+      color: #b74b4b; font-weight: 700; font-size: 1.6rem; margin: 2px 0 8px;
+    }
+    .eduH-list{ margin: 0; padding-left: 18px; }
+    .eduH-list li{
+      margin: 4px 0;
+      color: #eaeaea;
+      font-size: 1.5rem;
+      line-height: 1.55;
+    }
+
+    /* mobile: stack the body columns */
+    @media (max-width: 860px){
+      .eduH-card{ grid-template-columns: 56px 1fr; }
+      .eduH-logo{ width:56px; height:56px; }
+      .eduH-body{ grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -27,94 +105,93 @@
   <main class="eduH-wrap">
     <!-- GMU -->
     <article class="eduH-card">
-      <!-- Title row spans full card; logo sits left of titles -->
-      <div class="eduH-title-row">
-        <div class="eduH-logo">
-          <img src="logos/gmu_logo.png" alt="George Mason University logo"/>
-        </div>
-        <div class="eduH-title-block">
-          <h2 class="eduH-title">George Mason University</h2>
-          <div class="eduH-sub">M.S. in Data Analytics Engineering • 2023 — 2025 • GPA: <b>3.73 / 4.0</b></div>
-        </div>
+      <div class="eduH-logo">
+        <img src="logos/gmu_logo.png" alt="George Mason University logo"/>
       </div>
 
-      <!-- Body row uses two columns aligned under the title block -->
-      <div class="eduH-body-row">
-        <section class="eduH-section">
-          <h4>Selected Coursework</h4>
-          <ul class="eduH-list">
-            <li>Machine Learning</li>
-            <li>Big Data / PySpark</li>
-            <li>Database Systems</li>
-            <li>Data Visualization</li>
-            <li>Data Mining</li>
-            <li>Cloud Computing</li>
-            <li>Business Intelligence</li>
-          </ul>
-        </section>
+      <div class="eduH-main">
+        <header class="eduH-head">
+          <h2>George Mason University</h2>
+          <div class="eduH-degree">M.S. in Data Analytics Engineering</div>
+          <div class="eduH-meta">2023 — 2025 · GPA: <b>3.73 / 4.0</b></div>
+        </header>
 
-        <section class="eduH-section">
-          <h4>Highlights</h4>
-          <ul class="eduH-list">
-            <li>TA/RA supporting 100+ students across cloud-data workflows.</li>
-            <li>End-to-end analytics pipelines from raw data to decision-ready insights.</li>
-            <li>Normalized library DB & authored 10+ SQL alerts/triggers for reliability.</li>
-          </ul>
+        <section class="eduH-body">
+          <div class="eduH-col">
+            <h3>Selected Coursework</h3>
+            <ul class="eduH-list">
+              <li>Machine Learning</li>
+              <li>Big Data / PySpark</li>
+              <li>Database Systems</li>
+              <li>Data Visualization</li>
+              <li>Data Mining</li>
+              <li>Cloud Computing</li>
+              <li>Business Intelligence</li>
+            </ul>
+          </div>
+
+          <div class="eduH-col">
+            <h3>Highlights</h3>
+            <ul class="eduH-list">
+              <li>TA/RA supporting 100+ students across cloud-data workflows.</li>
+              <li>End-to-end analytics pipelines from raw data to decision-ready insights.</li>
+              <li>Normalized library DB & authored 10+ SQL alerts/triggers for reliability.</li>
+            </ul>
+          </div>
         </section>
       </div>
     </article>
 
     <!-- VIT -->
     <article class="eduH-card">
-      <div class="eduH-title-row">
-        <div class="eduH-logo">
-          <img src="logos/vit_logo.png" alt="Vellore Institute of Technology logo"/>
-        </div>
-        <div class="eduH-title-block">
-          <h2 class="eduH-title">Vellore Institute of Technology</h2>
-          <div class="eduH-sub">B.Tech in Electronics &amp; Computer Engineering • 2019 — 2023 • GPA: <b>3.36 / 4.0</b></div>
-        </div>
+      <div class="eduH-logo">
+        <img src="logos/vit_logo.png" alt="Vellore Institute of Technology logo"/>
       </div>
 
-      <div class="eduH-body-row">
-        <section class="eduH-section">
-          <h4>Selected Coursework</h4>
-          <ul class="eduH-list">
-            <li>Data Structures &amp; Algorithms</li>
-            <li>Operating Systems</li>
-            <li>Data Analytics &amp; Visualization</li>
-            <li>Database Management Systems</li>
-            <li>OOPS (C++ / Java)</li>
-            <li>Cloud &amp; Distributed Computing</li>
-          </ul>
-        </section>
+      <div class="eduH-main">
+        <header class="eduH-head">
+          <h2>Vellore Institute of Technology</h2>
+          <div class="eduH-degree">B.Tech in Electronics &amp; Computer Engineering</div>
+          <div class="eduH-meta">2019 — 2023 · GPA: <b>3.36 / 4.0</b></div>
+        </header>
 
-        <section class="eduH-section">
-          <h4>Highlights</h4>
-          <ul class="eduH-list">
-            <li>Hands-on programming in C++, Java, Python, SQL.</li>
-            <li>Mini-projects across ML, IoT, and cloud fundamentals.</li>
-          </ul>
+        <section class="eduH-body">
+          <div class="eduH-col">
+            <h3>Selected Coursework</h3>
+            <ul class="eduH-list">
+              <li>Data Structures &amp; Algorithms</li>
+              <li>Operating Systems</li>
+              <li>Data Analytics &amp; Visualization</li>
+              <li>Database Management Systems</li>
+              <li>OOPS (C++ / Java)</li>
+              <li>Cloud &amp; Distributed Computing</li>
+            </ul>
+          </div>
+
+          <div class="eduH-col">
+            <h3>Highlights</h3>
+            <ul class="eduH-list">
+              <li>Hands-on programming in C++, Java, Python, SQL.</li>
+              <li>Mini-projects across ML, IoT, and cloud fundamentals.</li>
+            </ul>
+          </div>
         </section>
       </div>
     </article>
   </main>
 
   <script>
-    // Smooth page fade
+    // page fade
     document.body.classList.remove('fade-out');
     document.querySelectorAll('nav a').forEach(a=>{
       a.addEventListener('click', e=>{
-        const href = a.getAttribute('href');
-        if (!href || href === '#') return;
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        setTimeout(()=>{ location.href = href; }, 300);
+        const href=a.getAttribute('href'); if(!href||href==='#') return;
+        e.preventDefault(); document.body.classList.add('fade-out');
+        setTimeout(()=>location.href=href, 300);
       });
     });
-
-    // Mobile nav toggle
-    document.querySelector('.menu-toggle')?.addEventListener('click', ()=>{
+    // mobile nav
+    document.querySelector('.menu-toggle')?.addEventListener('click',()=>{
       document.querySelector('header nav')?.classList.toggle('show');
     });
   </script>
