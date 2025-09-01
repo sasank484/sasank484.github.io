@@ -303,9 +303,10 @@ header{
   justify-content: center; margin: 10px 0 16px;
 }
 
-/* CTA pinned bottom-center of its own card */
 .certs-grid .cert-cta{
-  position: absolute; left: 50%; bottom: 16px;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
   transform: translateX(-50%);
   margin: 0 !important;
 }
