@@ -406,9 +406,9 @@ header{
 /* === Color variants for common cert topics === */
 .pill-cloud{ background:#7dd3fc; color:#083344; }
 .pill-gcp{ background:#f87171; color:#2a0b0b; }
-.pill-kubernetes{ background:#004ef6; color:#0e558b; }
-.pill-storage{ background:#005f3c; color:#0a7748; }
-.pill-database{ background:#ca91009a; color:#b37e1c; }
+.pill-kubernetes{ background:#004ef6; color:#011d33; }
+.pill-storage{ background:#def151; color:#022b19; }
+.pill-database{ background:#fcc12c9a; color:#3e2a03; }
 
 .pill-sql{ background:#60a5fa; color:#0b254b; }
 .pill-databases{ background:#cbd5e1; color:#0b1b2b; }
