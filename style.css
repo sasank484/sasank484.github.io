@@ -856,3 +856,13 @@ span{ color:#b74b4b; }
   }
   .eduH-body{ grid-template-columns: 1fr; }
 }
+/* Stop grid from stretching items to the tallest row */
+.eduH-wrap { 
+  align-items: start;           /* don't stretch items */
+}
+
+.eduH-card {
+  align-self: start;            /* this card uses its own content height */
+  height: auto !important;      /* ensure no fixed height applies */
+  min-height: unset !important; /* kill any leftover min-height */
+}
