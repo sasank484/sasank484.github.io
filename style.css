@@ -850,3 +850,37 @@ header {
   right: 12px !important;
   bottom: 12px !important;
 }
+
+/* --- Normalize "View Repo" placement on ALL cards --- */
+.proj-card .face.back { 
+  padding-bottom: 72px; /* keep room for button + arrow */
+}
+
+/* Hard-center the button at the bottom (wins over older .meta rules) */
+.proj-card .face.back .meta{
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 16px !important;
+  transform: translateX(-50%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;     /* prevent odd spacing from earlier styles */
+}
+
+/* Uniform button sizing/shape */
+.proj-card .face.back .gh-link{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+}
