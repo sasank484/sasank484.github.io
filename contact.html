@@ -1,107 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="view-transition" content="same-origin" />
+  <meta charset="UTF-8"/>
+  <meta name="view-transition" content="same-origin"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <title>Contact - Sasank</title>
 
   <style>
-    /* ---------- Page-local styling to match your cards ---------- */
-    /* stop the contact card from stretching to 100vh */
-.contact-card{ min-height: unset !important; }
+    /* ===== Card look to match the site and stop stretching ===== */
+    .contact-wrap{ max-width: 1100px; margin: 110px auto 60px; padding: 0 20px; }
+    .contact-head{ text-align:center; margin-bottom: 18px; }
+    .contact-head h1{ font-size: clamp(2.4rem, 2rem + 2vw, 4rem); color:#b74b4b; margin-bottom:6px; }
+    .contact-sub{ color:#cfcfcf; font-size:1.4rem; }
 
-    .contact-wrap{
-      max-width: 1100px;
-      margin: 110px auto 70px;
-      padding: 0 20px;
-    }
-    .contact-head{ text-align:center; margin-bottom:22px; }
-    .contact-head h1{
-      font-size: clamp(2.4rem, 2rem + 2vw, 4rem);
-      color:#b74b4b;
-      margin-bottom:6px; font-weight:700;
-    }
-    .contact-head p{ color:#cfcfcf; font-size:1.4rem; }
-
-    /* Card shell (same gradient/border vibe as projects/edu) */
     .contact-card{
       background: linear-gradient(180deg,#121212,#0d0d0d);
-      border-radius:18px;
-      box-shadow:0 10px 24px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.06);
-      padding:24px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03);
+      padding: 18px;
       max-width: 100%;
+      min-height: unset !important; /* override global section rule */
     }
 
-    /* top chips row */
-    .contact-chips{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-bottom:18px;
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px; border-radius:999px;
+    /* top badges (mailto / tel / social) */
+    .quick-links{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 14px; }
+    .qlink{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:12px; line-height:1;
       background:#101010; color:#fff; text-decoration:none;
-      border:1px solid rgba(255,255,255,.10);
-      font-size:1.35rem; line-height:1;
-      transition: box-shadow .18s ease, border-color .18s ease, transform .08s ease;
+      border:1px solid rgba(255,255,255,.08);
+      font-size:1.35rem;
     }
-    .chip i{ font-size:1.3rem; opacity:.9; }
-    .chip:hover{
-      border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.20);
-      transform:translateY(-1px);
-    }
+    .qlink:hover{ border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.20); }
 
     /* form grid */
-    .form-grid{
-      display:grid; gap:14px;
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width:780px){ .form-grid{ grid-template-columns:1fr; } }
+    .c-form{ display:grid; gap:12px; }
+    .row{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    @media (max-width: 760px){ .row{ grid-template-columns: 1fr; } }
 
-    .field{ display:flex; flex-direction:column; gap:8px; }
-    .field label{
-      font-size:1.35rem; color:#cfcfcf; opacity:.95;
+    label{ font-size:1.3rem; color:#cfcfcf; margin-bottom:4px; display:block; }
+    .field{
+      width:100%; padding:14px; border-radius:12px; color:#fff;
+      background:#0f1620; border:1px solid rgba(255,255,255,.08);
+      font-size:1.5rem;
     }
-    .input, .textarea{
-      width:100%; border-radius:12px;
-      background:#0f1722; color:#eaeaea;
-      border:1px solid rgba(255,255,255,.08);
-      padding:14px 14px; font-size:1.55rem;
-      transition:border-color .15s ease, box-shadow .15s ease;
-    }
-    .input:focus, .textarea:focus{
-      border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.12);
-      outline:none;
-    }
-    .textarea{
-      min-height:160px; resize:vertical;
-      grid-column:1 / -1; /* span both columns */
-    }
+    .field::placeholder{ color:#98a4b3; opacity:.9; }
 
-    .actions{
-      margin-top:10px; display:flex; gap:10px; align-items:center;
-    }
-    .btn-send{
+    textarea.field{ min-height: 180px; resize: vertical; }
+
+    .cta{ display:flex; gap:10px; align-items:center; margin-top:6px; }
+    .btn{
       display:inline-flex; align-items:center; gap:10px;
-      padding:12px 18px; border-radius:14px; line-height:1;
-      background:#b74b4b; color:#0b0b0b; font-weight:700;
-      border:1px solid rgba(255,255,255,.08);
-      cursor:pointer; font-size:1.6rem;
-      transition: transform .06s ease, box-shadow .18s ease;
+      padding:12px 16px; border-radius:12px; line-height:1;
+      background:#b74b4b; color:#000; border:none; cursor:pointer; font-weight:700;
     }
-    .btn-send:hover{ box-shadow:0 10px 24px rgba(183,75,75,.25); transform:translateY(-1px); }
-    .btn-send:active{ transform:translateY(0); }
+    .btn[disabled]{ opacity:.6; cursor:not-allowed; }
 
-    /* keep card compact – no artificial min-heights */
-    .contact-card > * + *{ margin-top: 8px; }
+    .status{ font-size:1.35rem; }
+    .status.ok{ color:#86efac; }
+    .status.err{ color:#fca5a5; }
   </style>
 </head>
 <body>
-  <!-- Header -->
+
   <header>
     <a href="index.html" class="logo">Sasank Chithirala</a>
     <nav>
@@ -119,67 +83,78 @@
   <main class="contact-wrap">
     <div class="contact-head">
       <h1>Contact</h1>
-      <p>Whether you’re hiring for a role or need a freelance collaborator, feel free to get in touch.</p>
+      <p class="contact-sub">Whether you’re hiring for a role or need a freelance collaborator, feel free to get in touch.</p>
     </div>
 
-    <section class="contact-card">
-      <!-- Clickable chips -->
-      <div class="contact-chips">
-        <!-- email: opens mail app -->
-        <a class="chip" href="mailto:sasankchithirala@gmail.com">
+    <!-- Use DIV (not <section>) so global section{min-height:100vh} doesn't apply -->
+    <div class="contact-card">
+
+      <!-- quick contact badges -->
+      <div class="quick-links">
+        <a class="qlink" href="mailto:sasankchithirala@gmail.com">
           <i class="fa-solid fa-envelope"></i> sasankchithirala@gmail.com
         </a>
-        <!-- phone: opens dialer on supported devices -->
-        <a class="chip" href="tel:+17038019727">
+        <a class="qlink" href="tel:+17038019727">
           <i class="fa-solid fa-phone"></i> +1 (703) 801-9727
         </a>
-        <a class="chip" href="https://www.linkedin.com/in/sasank-chithirala/" target="_blank" rel="noopener">
+        <a class="qlink" href="https://www.linkedin.com/in/sasank-chithirala/" target="_blank" rel="noopener">
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
-        <a class="chip" href="https://github.com/sasank484" target="_blank" rel="noopener">
+        <a class="qlink" href="https://github.com/sasank484" target="_blank" rel="noopener">
           <i class="fa-brands fa-github"></i> GitHub
         </a>
       </div>
 
-      <!-- Message form -->
-      <form id="contactForm" class="form-grid" autocomplete="on">
-        <div class="field">
-          <label for="name">Your name</label>
-          <input class="input" type="text" id="name" name="name" placeholder="Your name"/>
+      <!-- FORM posts to Web3Forms; no mail client opens -->
+      <form id="contactForm" class="c-form">
+        <!-- Required by Web3Forms -->
+        <input type="hidden" name="access_key" value="583b7976-7b46-44c8-acff-cdaa1022c5e3">
+        <!-- Optional subject/from labels -->
+        <input type="hidden" name="subject" value="New message via Portfolio Contact Form">
+        <input type="hidden" name="from_name" value="Sasank Portfolio">
+
+        <div class="row">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" class="field" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email address <span style="opacity:.75">*</span></label>
+            <input id="email" name="email" class="field" type="email" placeholder="name@example.com" required>
+          </div>
         </div>
 
-        <div class="field">
-          <label for="email">Email address <span aria-hidden="true" style="color:#b74b4b">*</span></label>
-          <input class="input" type="email" id="email" name="email" placeholder="name@example.com" required/>
+        <div class="row">
+          <div>
+            <label for="website">LinkedIn or Website (optional)</label>
+            <input id="website" name="website" class="field" type="url" placeholder="https://…">
+          </div>
+          <div>
+            <label for="role">Opportunity type / role <span style="opacity:.75">*</span></label>
+            <input id="role" name="role" class="field" type="text" placeholder="Data Engineer, Internship, Freelance…" required>
+          </div>
         </div>
 
-        <div class="field">
-          <label for="website">LinkedIn or Website (optional)</label>
-          <input class="input" type="url" id="website" name="website" placeholder="https://…"/>
+        <div>
+          <label for="message">Message <span style="opacity:.75">*</span></label>
+          <textarea id="message" name="message" class="field" placeholder="Type your message here." required></textarea>
         </div>
 
-        <div class="field">
-          <label for="role">Opportunity type / role <span aria-hidden="true" style="color:#b74b4b">*</span></label>
-          <input class="input" type="text" id="role" name="role" placeholder="Data Engineer, Internship, Freelance…" required/>
-        </div>
+        <!-- very light spam trap -->
+        <input type="checkbox" name="botcheck" style="display:none">
 
-        <div class="field" style="grid-column:1 / -1;">
-          <label for="message">Message <span aria-hidden="true" style="color:#b74b4b">*</span></label>
-          <textarea class="textarea" id="message" name="message" placeholder="Type your message here." required></textarea>
-        </div>
-
-        <div class="actions" style="grid-column:1 / -1;">
-          <button type="submit" class="btn-send">
+        <div class="cta">
+          <button id="sendBtn" type="submit" class="btn">
             <i class="fa-solid fa-paper-plane"></i> Send message
           </button>
+          <span id="formStatus" class="status" aria-live="polite"></span>
         </div>
       </form>
-    </section>
+    </div>
   </main>
 
-  <!-- page fade + mobile menu (same pattern as other pages) -->
   <script>
-    // Smooth page fade
+    // fade nav
     document.body.classList.remove('fade-out');
     document.querySelectorAll('nav a').forEach(link=>{
       link.addEventListener('click', e=>{
@@ -187,53 +162,50 @@
         if(href && href !== '#'){
           e.preventDefault();
           document.body.classList.add('fade-out');
-          setTimeout(()=>{ location.href = href; }, 300);
+          setTimeout(()=>location.href = href, 300);
         }
       });
     });
-    // Mobile nav
     document.querySelector('.menu-toggle')?.addEventListener('click', ()=>{
       document.querySelector('header nav')?.classList.toggle('show');
     });
 
-    // Mailto form: composes an email to you with subject/body from inputs
+    // ----- FORM: send via Web3Forms without opening mail client -----
     const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e)=>{
+    const btn  = document.getElementById('sendBtn');
+    const statusEl = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e)=>{
       e.preventDefault();
+      statusEl.textContent = '';
+      btn.disabled = true;
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending…';
 
-      const to = 'sasankchithirala@gmail.com';
-      const name = document.getElementById('name').value.trim();
-      const fromEmail = document.getElementById('email').value.trim();
-      const website = document.getElementById('website').value.trim();
-      const role = document.getElementById('role').value.trim();
-      const msg = document.getElementById('message').value.trim();
+      try{
+        const formData = new FormData(form);
+        const res  = await fetch('https://api.web3forms.com/submit', { method:'POST', body: formData });
+        const json = await res.json();
 
-      if(!fromEmail || !role || !msg){
-        alert('Please fill in Email, Opportunity type/role, and Message.');
-        return;
+        if(json.success){
+          form.reset();
+          statusEl.textContent = "Thanks! I’ll get back to you soon.";
+          statusEl.className = 'status ok';
+        }else{
+          statusEl.textContent = "Hmm, something went wrong. Please try again.";
+          statusEl.className = 'status err';
+          console.error(json);
+        }
+      }catch(err){
+        statusEl.textContent = "Network error. Please try again in a moment.";
+        statusEl.className = 'status err';
+        console.error(err);
+      }finally{
+        btn.disabled = false;
+        btn.innerHTML = orig;
       }
-
-      const subject = `Contact: ${role}${name ? ' — ' + name : ''}`;
-      const lines = [
-        `From: ${name || '(no name)'} <${fromEmail}>`,
-        website ? `Website: ${website}` : '',
-        '',
-        'Message:',
-        msg
-      ].filter(Boolean);
-
-      const body = lines.join('\n');
-
-      // open default mail app
-      const link = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = link;
-
-      // Optional UX: small visual feedback
-      const btn = form.querySelector('.btn-send');
-      btn.disabled = true; setTimeout(()=>{ btn.disabled = false; }, 1200);
     });
   </script>
-
   <script src="transitions.js"></script>
 </body>
 </html>
