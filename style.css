@@ -375,3 +375,64 @@ header{
 .certs-grid .cert-title{ margin: 6px 0 2px; }
 .certs-grid .cert-issuer{ margin-top: 2px; }
 .certs-grid .cert-meta{ margin: 6px 0 6px; gap: 6px; }
+
+
+/* Bigger, uniform certification logos */
+.certs-grid .cert-media{
+  /* scales with screen, but capped */
+  width: clamp(120px, 12vw, 170px);
+  height: clamp(120px, 12vw, 170px);
+  border-radius: 18px;
+}
+.certs-grid .cert-media img{
+  max-width: 86%;
+  max-height: 86%;
+  object-fit: contain;
+}
+
+/* Tag pill base (keeps your current look but applies here too) */
+.cert-pill{
+  display:inline-block;
+  font-size:1.2rem;
+  line-height:1;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  background:#e5e5e5;
+  color:#0b0b0b;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* === Color variants for common cert topics === */
+.pill-cloud{ background:#7dd3fc; color:#083344; }
+.pill-gcp{ background:#f87171; color:#2a0b0b; }
+
+.pill-sql{ background:#60a5fa; color:#0b254b; }
+.pill-databases{ background:#cbd5e1; color:#0b1b2b; }
+
+.pill-docker{ background:#2496ed; color:#001a2e; }
+.pill-containers{ background:#a7f3d0; color:#064e3b; }
+
+.pill-bigdata{ background:#f59e0b; color:#1f1300; }
+.pill-hadoop{ background:#fde047; color:#3a3000; }
+
+.pill-analytics{ background:#a78bfa; color:#1c0d2e; }
+.pill-excel{ background:#22c55e; color:#052e1c; }
+.pill-sql2{ background:#60a5fa; color:#0b254b; } 
+
+.pill-cpp{ background:#38bdf8; color:#062036; }
+.pill-java{ background:#f97316; color:#2a0d00; }
+.pill-mysql{ background:#93c5fd; color:#0b2747; }
+
+.pill-llms{
+  background:#f43f5e;  /* pink-red */
+  color:#2a0b0b;
+}
+.pill-api{
+  background:#34d399;  /* green */
+  color:#052e1c;
+}
+.pill-gpt{
+  background:#8b5cf6;  /* purple */
+  color:#1c0d2e;
+}
