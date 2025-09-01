@@ -699,3 +699,30 @@ span{ color:#b74b4b; }
   box-shadow:0 0 0 5px rgba(183,75,75,.25);
 }
 .edu-link-pill i{ font-size:1.2rem; opacity:.9; }
+/* === Education: widen, stop vertical stretch, tighten spacing === */
+
+/* 1) Widen the overall section */
+.edu-wrap{
+  max-width: 1320px;           /* was 1200px */
+}
+
+/* 2) Don't stretch items to the height of the tallest card */
+.edu-grid{
+  gap: 20px;                    /* a touch tighter */
+  align-items: start;           /* <-- key: prevents equal-height stretch */
+}
+
+/* 3) Shorten card padding so the card is not tall by default */
+.edu-card{
+  padding: 16px 18px;           /* was ~20px 22px */
+}
+
+/* 4) Tighten inner spacing a bit */
+.edu-body{ 
+  margin: 0 auto 10px;          /* was 16px bottom */
+}
+
+/* 5) Let link pills sit right under content (no push-to-bottom) */
+.edu-links-row{
+  margin-top: 10px;             /* was margin-top:auto; */
+}
