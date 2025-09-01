@@ -406,22 +406,31 @@ header{
 /* === Color variants for common cert topics === */
 .pill-cloud{ background:#7dd3fc; color:#083344; }
 .pill-gcp{ background:#f87171; color:#2a0b0b; }
-.pill-kubernetes{ background:#004ef6; color:#001a2e; }
-.pill-storage{ background:#005f3c; color:#052e1c; }
-.pill-database{ background:#ca91009a; color:#3a3000; }
+.pill-kubernetes{ background:#004ef6; color:#0e558b; }
+.pill-storage{ background:#005f3c; color:#0a7748; }
+.pill-database{ background:#ca91009a; color:#b37e1c; }
 
 .pill-sql{ background:#60a5fa; color:#0b254b; }
 .pill-databases{ background:#cbd5e1; color:#0b1b2b; }
+.pill-CTE{ background:#fbbf24; color:#3a3000; }
+.pill-joins{ background:#34d399; color:#052e1c; }
 
 .pill-docker{ background:#2496ed; color:#001a2e; }
 .pill-containers{ background:#a7f3d0; color:#064e3b; }
+.pill-compose{ background:#66d90e; color:#0b2747; }
+.pill-images{ background:#f97316; color:#2a0d00; }
 
-.pill-bigdata{ background:#f59e0b; color:#1f1300; }
+
 .pill-hadoop{ background:#fde047; color:#3a3000; }
+.pill-mapreduce{ background:#f5a524; color:#2a1a00; }
+.pill-hive{ background:#e879f9; color:#2a0d2e; }
+.pill-hbase{ background:#a78bfa; color:#1c0d2e; }
+.pill-pig{ background:#38bdf8; color:#062036; }
 
-.pill-analytics{ background:#a78bfa; color:#1c0d2e; }
+.pill-powerquery{ background:#a78bfa; color:#1c0d2e; }
 .pill-excel{ background:#22c55e; color:#052e1c; }
-.pill-sql2{ background:#60a5fa; color:#0b254b; } 
+.pill-pbi{ background:#60a5fa; color:#0b254b; }
+.pill-pivot{ background:#fbbf24; color:#3a3000; } 
 
 .pill-cpp{ background:#38bdf8; color:#062036; }
 .pill-java{ background:#f97316; color:#2a0d00; }
@@ -438,4 +447,12 @@ header{
 .pill-gpt{
   background:#8b5cf6;  /* purple */
   color:#1c0d2e;
+}
+.pill-tokens{
+  background:#fbbf24;  /* yellow */
+  color:#3a3000;
+}
+.pill-prompts{
+  background:#3b82f6;  /* blue */
+  color:#0b254b;
 }
