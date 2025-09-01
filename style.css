@@ -788,3 +788,37 @@ header {
   display:grid;place-items:center;background:linear-gradient(180deg,#1a1a1a,#111);
   border:1px solid rgba(255,255,255,.08);opacity:.95;pointer-events:none;z-index:2;
 }
+
+/* === Flip v2 (no wrapper rotate): front fades out, back fades in === */
+.proj-card .card-inner{ transform:none !important; } /* kill the old 180° wrapper flip */
+.proj-card .face.front,
+.proj-card .face.back{
+  transition: opacity .35s ease, transform .45s ease;
+  will-change: opacity, transform;
+}
+
+/* default: show front, hide back */
+.proj-card .face.front{ opacity:1; transform: rotateY(0deg); z-index:2; }
+.proj-card .face.back { opacity:0; transform: rotateY(-8deg); z-index:3; }
+
+/* when showing back */
+.proj-card.show-back .face.front{ opacity:0; transform: rotateY(8deg); pointer-events:none; }
+.proj-card.show-back .face.back { opacity:1; transform: rotateY(0deg);  pointer-events:auto; }
+
+/* make sure back has an opaque solid background */
+.proj-card .face.back{
+  background: linear-gradient(180deg, #131313, #0f0f0f) !important;
+}
+
+/* flip icon pinned bottom-right, regardless of other rules */
+.proj-card .flip-corner{
+  position:absolute !important;
+  right:12px !important;
+  bottom:12px !important;
+  left:auto !important; top:auto !important;
+  width:36px; height:36px; border-radius:12px;
+  display:grid; place-items:center;
+  background:linear-gradient(180deg,#1a1a1a,#111);
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff; opacity:.95; pointer-events:none; z-index:5;
+}
