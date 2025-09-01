@@ -456,3 +456,27 @@ header{
   background:#3b82f6;  /* blue */
   color:#0b254b;
 }
+
+/* === Certifications header: match Projects header === */
+.certs-wrap{
+  max-width: 1200px;
+  margin: 110px auto 60px;   /* same top offset as Projects page */
+  padding: 0 20px;
+}
+
+.certs-head{
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.certs-head h1{
+  font-size: clamp(2.4rem, 2rem + 2vw, 4rem); /* same scale as Projects */
+  color: #b74b4b;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.certs-sub{
+  color: #cfcfcf;
+  font-size: 1.4rem;
+}
