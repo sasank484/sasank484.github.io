@@ -825,3 +825,28 @@ header {
 
 .flip-corner svg { display:block; }
 .flip-corner:hover { box-shadow: 0 0 0 6px rgba(183,75,75,.25); }
+
+/* Center the repo button at the bottom of the back face */
+.proj-card .face.back { 
+  padding-bottom: 72px; /* room for the button + arrow */
+}
+
+.proj-card .face.back .meta {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  margin-top: 0;          /* override previous auto push */
+  width: auto;            /* shrink to content */
+  justify-content: center;
+}
+
+.proj-card .face.back .gh-link {
+  padding: 12px 16px;     /* comfy touch target */
+}
+
+/* Keep the flip arrow pinned bottom-right */
+.proj-card .flip-corner {
+  right: 12px !important;
+  bottom: 12px !important;
+}
