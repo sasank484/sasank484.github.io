@@ -323,3 +323,25 @@ header{
   margin-top: auto !important;                   /* pins button to bottom */
 }
 .cert-inner { padding-top: 34px; }               /* was 26px */
+
+/* --- Certifications: lock layout (top content, CTA at bottom) --- */
+.certs-grid .cert-inner{
+  /* force grid so spacing is deterministic */
+  display: grid !important;
+  grid-auto-rows: max-content;   /* each child uses only what it needs */
+  justify-items: center;         /* center items horizontally */
+  align-content: space-between;  /* push first items up, CTA down */
+  height: 100%;
+  padding: 26px;                 /* keep your existing padding */
+}
+
+/* make sure the CTA doesn't try to create extra space above itself */
+.certs-grid .cert-cta{
+  margin-top: 0 !important;      /* margin-top:auto no longer needed with grid */
+  align-self: center;            /* keep it centered horizontally */
+}
+
+/* small tidy ups for consistent rhythm */
+.certs-grid .cert-media{ margin-bottom: 14px; }
+.certs-grid .cert-title{ margin-top: 2px; }
+.certs-grid .cert-meta{ margin: 10px 0 16px; }
