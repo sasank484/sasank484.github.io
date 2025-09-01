@@ -726,75 +726,114 @@ span{ color:#b74b4b; }
 .edu-links-row{
   margin-top: 10px;             /* was margin-top:auto; */
 }
-/* === Education: bigger, symmetrical cards + scaled typography === */
-
-/* Wider container */
+/* === Education: bigger, symmetric, wide cards === */
 .edu-wrap{
-  max-width: 1400px;                 /* up from ~1200px */
+  max-width: 1280px;           /* wider page container */
+  margin: 110px auto 60px;
+  padding: 0 24px;
 }
 
-/* Two equal columns that stretch to the same height */
 .edu-grid{
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2-up */
   gap: 32px;
-  align-items: stretch;               /* same height for both cards */
+  align-items: stretch;         /* equal heights per row */
 }
 
-/* Larger cards with equal height and spacious padding */
 .edu-card{
-  display: flex;
-  flex-direction: column;
-  padding: 26px 28px;                 /* slightly larger padding */
+  background: linear-gradient(180deg,#121212,#0d0d0d);
+  box-shadow: 0 10px 24px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.06);
   border-radius: 18px;
-  min-height: 560px;                  /* make both feel substantial */
+  padding: 28px 30px;           /* bigger padding */
+  display: flex;                /* let content define height */
+  flex-direction: column;
+  min-height: 420px;            /* short & wide vibe, but roomy */
 }
 
-/* Title row (logo + heading) scales up */
-.edu-title-row{
+/* header row */
+.edu-header{
   display: grid;
-  grid-template-columns: 64px 1fr;    /* larger logo plate */
+  grid-template-columns: 72px 1fr; /* larger logo */
+  column-gap: 16px;
   align-items: center;
-  column-gap: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-.edu-logo-plate{
-  width: 64px; height: 64px;
+.edu-logo{
+  width: 72px; height: 72px;
   border-radius: 14px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  display: grid; place-items: center;
+  overflow: hidden;
 }
-.edu-logo-plate img{
-  max-width: 78%; max-height: 78%;
-  object-fit: contain;
-}
+.edu-logo img{ width: 76%; height: 76%; object-fit: contain; }
 
-/* Typography scales with viewport so text matches card size */
-.edu-heading{
-  font-size: clamp(2.2rem, 1.2vw + 1.6rem, 3.2rem);
-  line-height: 1.2;
+.edu-title{
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 1.2rem + 1.4vw, 3.0rem); /* bigger title */
 }
-.edu-subtitle{
-  font-size: clamp(1.4rem, 0.5vw + 1.1rem, 1.8rem);
-  opacity: .9;
+.edu-sub{
+  margin-top: 2px;
+  color: #e8e8e8;
+  font-size: 1.6rem;            /* bigger subline */
 }
 .edu-meta{
-  font-size: clamp(1.5rem, 0.45vw + 1rem, 1.8rem);
+  margin-top: 8px;
+  color: #cfcfcf;
+  font-size: 1.5rem;
 }
 
-/* Section headings + lists get a touch bigger */
-.edu-section h4{
-  font-size: clamp(1.7rem, 0.6vw + 1.1rem, 2.0rem);
+/* body content */
+.edu-body{ margin-top: 14px; }
+
+.edu-section-title{
+  color:#b74b4b;
+  font-weight: 700;
+  font-size: 1.6rem;            /* slightly larger section labels */
+  margin: 16px 0 8px;
 }
-.edu-section ul{ margin-top: 8px; }
-.edu-section li{
-  font-size: clamp(1.45rem, 0.45vw + 1rem, 1.75rem);
+
+/* two columns for coursework */
+.edu-columns{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+.edu-columns ul{ margin:0; padding-left: 20px; }
+.edu-columns li{
+  font-size: 1.55rem;           /* bigger bullets */
   line-height: 1.6;
+  color:#eaeaea;
 }
 
-/* Keep link pills aligned across both cards for symmetry */
-.edu-links-row{
-  margin-top: auto;                   /* pins to bottom of each card */
-  display: flex; flex-wrap: wrap; gap: 10px;
+/* highlights list */
+.edu-highlights ul{ margin:0; padding-left: 22px; }
+.edu-highlights li{
+  font-size: 1.55rem;
+  line-height: 1.6;
+  color:#eaeaea;
 }
-.edu-link{
-  font-size: 1.35rem;
-  paddi
+
+/* pills: keep in normal flow (no absolute) */
+.edu-links{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.edu-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 9px 12px;
+  border-radius:12px;
+  font-size: 1.35rem;           /* scale pill text a touch */
+  color:#fff; background:#101010;
+  border:1px solid rgba(255,255,255,.08);
+}
+.edu-pill:hover{ border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.25); }
+
+/* responsive: keep them big but stack on mobile */
+@media (max-width: 980px){
+  .edu-grid{ grid-template-columns: 1fr; }
+  .edu-card{ min-height: 0; }
+}
