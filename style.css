@@ -856,3 +856,115 @@ span{ color:#b74b4b; }
   }
   .eduH-body{ grid-template-columns: 1fr; }
 }
+
+/* ===== Education (Horizontal, auto-height) ===== */
+:root{
+  --eduH-max: 1280px;
+  --eduH-gap: 26px;
+  --eduH-logo: 88px;
+  --eduH-title-fs: clamp(2.2rem, 1.2rem + 1.4vw, 3rem);
+  --eduH-sub-fs: clamp(1.4rem, 1rem + .5vw, 1.7rem);
+  --eduH-h4-fs: clamp(1.5rem, 1rem + .5vw, 1.8rem);
+  --eduH-li-fs: clamp(1.4rem, 1rem + .4vw, 1.6rem);
+}
+
+.eduH-wrap{
+  max-width: var(--eduH-max);
+  margin: 110px auto 60px;
+  padding: 0 20px;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: var(--eduH-gap);
+  align-items: flex-start;                 /* don't stretch heights */
+}
+
+/* Two columns on desktop, full width on mobile */
+.eduH-card{
+  flex: 1 1 calc(50% - var(--eduH-gap)/2);
+  background: linear-gradient(180deg,#121212,#0d0d0d);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03);
+  border-radius: 16px;
+  padding: 20px 22px;
+
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: flex-start;
+
+  display: grid;
+  grid-template-columns: var(--eduH-logo) 1fr 1fr;  /* logo | list | list */
+  grid-auto-rows: min-content;                       /* shrink to content */
+  column-gap: 22px;
+  row-gap: 10px;
+}
+
+/* Title spans across the full card */
+.eduH-title-row{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: var(--eduH-logo) 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.eduH-logo{
+  width: var(--eduH-logo);
+  height: var(--eduH-logo);
+  border-radius: 12px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  display: grid; place-items: center; overflow: hidden;
+}
+.eduH-logo img{ max-width: 78%; max-height: 78%; object-fit: contain; }
+
+.eduH-title{ margin: 0; font-size: var(--eduH-title-fs); line-height: 1.15; }
+.eduH-sub{ margin-top: 2px; font-size: var(--eduH-sub-fs); color: #cfcfcf; }
+.eduH-sub b{ color:#fff; }
+
+/* Two content columns (coursework | highlights) */
+.eduH-body-row{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: var(--eduH-logo) 1fr 1fr;   /* leave logo column empty to line up under title */
+  column-gap: 22px;
+}
+.eduH-body-row > .eduH-section:first-child{ grid-column: 2; }
+.eduH-body-row > .eduH-section:last-child{ grid-column: 3; }
+
+.eduH-section h4{
+  margin: 6px 0 6px;
+  color:#b74b4b;
+  font-size: var(--eduH-h4-fs);
+}
+.eduH-list{
+  list-style: disc; margin: 0 0 6px 18px; padding: 0;
+  color:#eaeaea; font-size: var(--eduH-li-fs); line-height: 1.55;
+}
+
+/* Link pills (normal flow—no margin-top:auto so cards don't grow) */
+.eduH-links-row{
+  grid-column: 2 / -1;          /* under the lists, aligned with them */
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-top: 6px;
+}
+.eduH-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  font-size:1.35rem; background:#101010; color:#fff; text-decoration:none;
+  border:1px solid rgba(255,255,255,.10);
+  transition: box-shadow .18s ease, border-color .18s ease, transform .08s ease;
+}
+.eduH-pill:hover{ border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.20); transform:translateY(-1px); }
+.eduH-pill i{ font-size:1.2rem; opacity:.9; }
+
+/* Stack to single column on smaller screens */
+@media (max-width: 980px){
+  .eduH-card{ flex-basis: 100%; grid-template-columns: 72px 1fr; }
+  .eduH-title-row{ grid-template-columns: 72px 1fr; }
+  .eduH-logo{ width:72px; height:72px; }
+  .eduH-body-row{
+    grid-template-columns: 72px 1fr;  /* logo col + one content col */
+  }
+  .eduH-body-row > .eduH-section{ grid-column: 2; }
+  .eduH-links-row{ grid-column: 1 / -1; }
+}
