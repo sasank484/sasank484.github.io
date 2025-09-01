@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects - Sasank</title>
 
-  <!-- Font Awesome for icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
   <!-- Your site CSS -->
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
     <a href="index.html" class="logo">Sasank Chithirala</a>
-
     <nav>
       <a href="index.html">Home</a>
       <a href="projects.html" class="active">Projects</a>
@@ -23,129 +21,125 @@
       <a href="experience.html">Experience</a>
       <a href="contact.html">Contact</a>
     </nav>
-
     <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
   </header>
 
   <main class="projects-wrap">
     <div class="projects-head">
       <h1>Projects</h1>
-      <p class="projects-sub">Flip a card to see the summary and open the repo.</p>
+      <p class="projects-sub">Flip a card to read the summary and open the repo.</p>
     </div>
 
-    <section class="grid" id="projectsGrid">
+    <section class="grid">
       <!-- Card 1 -->
-<article class="proj-card"
-  tabindex="0"
-  data-cover="images/healthcare-pandemic.jpg"
-  data-gh="https://github.com/sasank484/Analysis-on-pandemic-s-impact-on-healthcare-system-and-happiness-index-using-Machine-algorithms">
-  <div class="card-inner">
-    <div class="face front">
-      <h3 class="proj-title">Pandemic Impact on Healthcare & Happiness</h3>
-      <div class="taglist">
-        <span class="tag ml">ML</span>
-        <span class="tag ensembles">Ensembles</span>
-        <span class="tag jhu">JHU COVID</span>
-        <span class="tag happiness_index">Happiness Index</span>
-      </div>
-      <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
-    </div>
-    <div class="face back">
-      <h4>Overview</h4>
-      <p>Combined World Happiness, JHU COVID, and vaccination datasets to study well-being vs. health outcomes; ensembles generalized best and revealed non-linear patterns.</p>
-      <div class="meta">
-        <a class="gh-link" href="https://github.com/sasank484/Analysis-on-pandemic-s-impact-on-healthcare-system-and-happiness-index-using-Machine-algorithms" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i> View Repo
-        </a>
-      </div>
-    </div>
-  </div>
-</article>
+      <article class="proj-card" tabindex="0"
+        data-gh="https://github.com/sasank484/Analysis-on-pandemic-s-impact-on-healthcare-system-and-happiness-index-using-Machine-algorithms">
+        <div class="card-inner">
+          <div class="face front">
+            <i class="fa-solid fa-notes-medical cover-icon" aria-hidden="true"></i>
+            <h3 class="proj-title">Pandemic Impact on Healthcare & Happiness</h3>
+            <div class="taglist">
+              <span class="tag ml">ML</span>
+              <span class="tag ensembles">Ensembles</span>
+              <span class="tag jhu">JHU COVID</span>
+              <span class="tag happy">World Happiness</span>
+            </div>
+            <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
+          </div>
+          <div class="face back">
+            <h4>Overview</h4>
+            <p>Combined World Happiness, JHU COVID, and vaccination datasets to study well-being vs. health outcomes; ensembles generalized best and revealed non-linear patterns.</p>
+            <div class="meta">
+              <a class="gh-link" href="https://github.com/sasank484/Analysis-on-pandemic-s-impact-on-healthcare-system-and-happiness-index-using-Machine-algorithms" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
 
-<!-- Card 2 -->
-<article class="proj-card"
-  tabindex="0"
-  data-cover="images/telecom-network.jpg"
-  data-gh="https://github.com/sasank484/CUSTOMER-CHURN-PREDICTION-IN-TELECOM-INDUSTRY">
-  <div class="card-inner">
-    <div class="face front">
-      <h3 class="proj-title">Telecom Customer Churn Prediction</h3>
-      <div class="taglist">
-        <span class="tag pyspark">PySpark</span>
-        <span class="tag databricks">Databricks</span>
-        <span class="tag mongo">MongoDB</span>
-      </div>
-      <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
-    </div>
-    <div class="face back">
-      <h4>Overview</h4>
-      <p>Built a MongoDB → Databricks/PySpark pipeline, engineered churn features, and benchmarked models; Gradient Boosting prioritized high-risk segments for retention.</p>
-      <div class="meta">
-        <a class="gh-link" href="https://github.com/sasank484/CUSTOMER-CHURN-PREDICTION-IN-TELECOM-INDUSTRY" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i> View Repo
-        </a>
-      </div>
-    </div>
-  </div>
-</article>
+      <!-- Card 2 -->
+      <article class="proj-card" tabindex="0"
+        data-gh="https://github.com/sasank484/CUSTOMER-CHURN-PREDICTION-IN-TELECOM-INDUSTRY">
+        <div class="card-inner">
+          <div class="face front">
+            <i class="fa-solid fa-tower-broadcast cover-icon" aria-hidden="true"></i>
+            <h3 class="proj-title">Telecom Customer Churn Prediction</h3>
+            <div class="taglist">
+              <span class="tag pyspark">PySpark</span>
+              <span class="tag databricks">Databricks</span>
+              <span class="tag mongo">MongoDB</span>
+            </div>
+            <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
+          </div>
+          <div class="face back">
+            <h4>Overview</h4>
+            <p>Built a MongoDB → Databricks/PySpark pipeline, engineered churn features, and benchmarked models; Gradient Boosting prioritized high-risk segments for retention.</p>
+            <div class="meta">
+              <a class="gh-link" href="https://github.com/sasank484/CUSTOMER-CHURN-PREDICTION-IN-TELECOM-INDUSTRY" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
 
-<!-- Card 3 -->
-<article class="proj-card"
-  tabindex="0"
-  data-cover="images/retail-shopping.jpg"
-  data-gh="https://github.com/sasank484/Target-market-analysis-and-strategic-recommendations">
-  <div class="card-inner">
-    <div class="face front">
-      <h3 class="proj-title">Target Retail Market Analysis</h3>
-      <div class="taglist">
-        <span class="tag survey">Survey</span>
-        <span class="tag tableau">Tableau</span>
-        <span class="tag strategy">Strategy</span>
-      </div>
-      <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
-    </div>
-    <div class="face back">
-      <h4>Overview</h4>
-      <p>Analyzed 101 survey responses and demand signals; recommended pricing moves, stronger owned-brands, and UX fixes to lift omnichannel performance.</p>
-      <div class="meta">
-        <a class="gh-link" href="https://github.com/sasank484/Target-market-analysis-and-strategic-recommendations" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i> View Repo
-        </a>
-      </div>
-    </div>
-  </div>
-</article>
+      <!-- Card 3 -->
+      <article class="proj-card" tabindex="0"
+        data-gh="https://github.com/sasank484/Target-market-analysis-and-strategic-recommendations">
+        <div class="card-inner">
+          <div class="face front">
+            <i class="fa-solid fa-store cover-icon" aria-hidden="true"></i>
+            <h3 class="proj-title">Target Retail Market Analysis</h3>
+            <div class="taglist">
+              <span class="tag survey">Survey</span>
+              <span class="tag tableau">Tableau</span>
+              <span class="tag strategy">Strategy</span>
+            </div>
+            <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
+          </div>
+          <div class="face back">
+            <h4>Overview</h4>
+            <p>Analyzed 101 survey responses and demand signals; recommended pricing moves, stronger owned-brands, and UX fixes to lift omnichannel performance.</p>
+            <div class="meta">
+              <a class="gh-link" href="https://github.com/sasank484/Target-market-analysis-and-strategic-recommendations" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
 
-<!-- Card 4 -->
-<article class="proj-card"
-  tabindex="0"
-  data-cover="images/climate-earth.jpg"
-  data-gh="https://github.com/sasank484/Optimized-Climate-Data-Integration-with-Real-Time-LLM-Querying">
-  <div class="card-inner">
-    <div class="face front">
-      <h3 class="proj-title">Optimized Climate Data + Real-Time LLM</h3>
-      <div class="taglist">
-        <span class="tag sqlite">SQLite</span>
-        <span class="tag mcp">MCP</span>
-        <span class="tag docker">Docker</span>
-      </div>
-      <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
-    </div>
-    <div class="face back">
-      <h4>Overview</h4>
-      <p>Grounded LLM responses on ERA5/EDGAR via SQLite + MCP servers to reduce hallucinations and stream precise, real-time climate answers.</p>
-      <div class="meta">
-        <a class="gh-link" href="https://github.com/sasank484/Optimized-Climate-Data-Integration-with-Real-Time-LLM-Querying" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i> View Repo
-        </a>
-      </div>
-    </div>
-  </div>
-</article>
+      <!-- Card 4 -->
+      <article class="proj-card" tabindex="0"
+        data-gh="https://github.com/sasank484/Optimized-Climate-Data-Integration-with-Real-Time-LLM-Querying">
+        <div class="card-inner">
+          <div class="face front">
+            <i class="fa-solid fa-cloud-sun-rain cover-icon" aria-hidden="true"></i>
+            <h3 class="proj-title">Optimized Climate Data + Real-Time LLM</h3>
+            <div class="taglist">
+              <span class="tag sqlite">SQLite</span>
+              <span class="tag mcp">MCP</span>
+              <span class="tag docker">Docker</span>
+            </div>
+            <div class="flip-corner" aria-hidden="true"><i class="fa-solid fa-rotate-right"></i></div>
+          </div>
+          <div class="face back">
+            <h4>Overview</h4>
+            <p>Grounded LLM responses on ERA5/EDGAR via SQLite + MCP servers to reduce hallucinations and stream precise, real-time climate answers.</p>
+            <div class="meta">
+              <a class="gh-link" href="https://github.com/sasank484/Optimized-Climate-Data-Integration-with-Real-Time-LLM-Querying" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 
-
-  <!-- Page transition (keep your pattern) -->
   <script>
+    // Keep your fade-out nav transitions
     document.body.classList.remove('fade-out');
     document.querySelectorAll('nav a').forEach(link=>{
       link.addEventListener('click', e=>{
@@ -158,24 +152,16 @@
       });
     });
 
-    // Mobile menu
+    // Mobile menu toggle
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('header nav');
     toggle?.addEventListener('click', ()=> nav.classList.toggle('show'));
 
-    // Attach cover images to FRONT only
-    document.querySelectorAll('.proj-card').forEach(card=>{
-      const cover = card.getAttribute('data-cover');
-      if (cover && cover.trim() !== "") {
-        card.style.setProperty('--cover-url', `url("${cover}")`);
-      }
-    });
-
-    // Flip logic (don’t flip when clicking links)
+    // Flip logic (don’t flip when clicking GH link)
     document.querySelectorAll('.proj-card').forEach(card=>{
       const flip = () => card.classList.toggle('flipped');
       card.addEventListener('click', e=>{
-        if(e.target.closest('a')) return;
+        if(e.target.closest('a')) return; // allow link clicks
         flip();
       });
       card.addEventListener('keydown', e=>{
