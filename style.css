@@ -296,8 +296,6 @@ header {
   display: none; /* always hidden by default */
 }
 
-
-
 @media (max-width: 768px), (pointer: coarse) {
   header {
     position: relative; /* not sticky for toggle dropdown */
@@ -352,8 +350,6 @@ header {
   }
 }
 
-
-
 .edu-item {
   display: flex;
   align-items: center;
@@ -374,4 +370,146 @@ header {
   max-height: 50px;
   width: auto;
   object-fit: contain;
+}
+
+/* === Projects page additions (required only) === */
+
+.projects-wrap{
+  max-width: 1200px;
+  margin: 110px auto 60px;
+  padding: 0 20px;
+}
+
+.projects-head{
+  text-align: center;
+  margin-bottom: 24px;
+}
+.projects-head h1{
+  font-size: clamp(2.4rem, 2rem + 2vw, 4rem);
+  color: #b74b4b;
+  margin-bottom: 6px;
+}
+.projects-sub{
+  color:#cfcfcf;
+  font-size: 1.4rem;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+/* flip card container */
+.proj-card{
+  position: relative;
+  aspect-ratio: 1 / 1;      /* big square card */
+  perspective: 1200px;
+  border-radius: 18px;
+}
+.card-inner{
+  position: relative;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.05);
+  background: linear-gradient(180deg, #121212, #0d0d0d);
+}
+.proj-card.flipped .card-inner{ transform: rotateY(180deg); }
+
+.face{
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 28px;
+  backface-visibility: hidden;
+}
+
+/* FRONT: title over subtle image only */
+.proj-card[data-cover] .face.front::before{
+  content:"";
+  position:absolute; inset:0;
+  background: center/cover no-repeat;
+  background-image: var(--cover-url);
+  filter: brightness(.55) saturate(1.05);
+  opacity:.9;
+  z-index:0;
+}
+/* gentle bottom vignette */
+.face.front::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.35));
+  z-index:0;
+}
+.face.front > *{ position:relative; z-index:1; }
+
+.proj-title{
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+  line-height: 1.15;
+}
+
+/* BACK: solid background (no image) */
+.face.back{
+  transform: rotateY(180deg);
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
+  background: linear-gradient(180deg, #131313, #0f0f0f);
+}
+.face.back h4{
+  font-size: 1.6rem;
+  color: #b74b4b;
+}
+.face.back p{
+  font-size: 1.5rem;
+  color: #eaeaea;
+  line-height: 1.55;
+}
+.meta{
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.gh-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border:1px solid rgba(255,255,255,.08);
+  background: #101010;
+}
+.gh-link:hover{
+  border-color:#b74b4b;
+  box-shadow: 0 0 0 6px rgba(183,75,75,.35);
+}
+
+/* flip hint icon */
+.flip-corner{
+  position:absolute; right:10px; bottom:10px;
+  width:36px; height:36px;
+  border-radius:12px;
+  display:grid; place-items:center;
+  color:#fff;
+  background: linear-gradient(180deg, #1a1a1a, #111);
+  border:1px solid rgba(255,255,255,.08);
+  opacity:.9;
+  pointer-events:none;
+}
+.proj-card:hover .flip-corner{
+  border-color:#b74b4b;
+  transform: translateY(-2px);
 }
