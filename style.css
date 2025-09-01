@@ -622,3 +622,111 @@ header{
   .org-badge{ width: 52px; height: 52px; flex-basis: 52px; }
   .milestone-meta h3{ font-size: 1.8rem; }
 }
+/* ===== Experience: Title-row alignment (GMU = ACS) ===== */
+:root{
+  --xp-left-pad: 72px;   /* text offset from the timeline line */
+  --xp-logo: 56px;       /* square logo box size */
+  --xp-gap: 14px;        /* gap between logo and text */
+}
+
+.xp-card { position: relative; overflow: hidden; }
+
+/* make all cards use the same left padding so text clears the timeline line */
+.xp-card-body{
+  position: relative;
+  padding: 24px 24px 18px var(--xp-left-pad);
+}
+
+/* timeline line + dot (kept stable for every card) */
+.xp-line{
+  position: absolute;
+  inset: 0 auto 0 28px;     /* left = 28px; runs full height */
+  width: 2px;
+  background: rgba(255,255,255,.06);
+}
+.xp-line .dot{
+  position: absolute;
+  top: 32px;                /* aligns with header row center */
+  left: -7px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #b74b4b;
+  box-shadow: 0 0 0 3px rgba(183,75,75,.25);
+}
+
+/* --- TITLE ROW: lock alignment across cards --- */
+.milestone-meta{
+  display: grid;
+  grid-template-columns: var(--xp-logo) 1fr;  /* logo | text */
+  align-items: center;                        /* vertical center */
+  column-gap: var(--xp-gap);
+  min-height: var(--xp-logo);                 /* same row height everywhere */
+  margin-bottom: 8px;
+}
+
+/* uniform logo plate so different image proportions don't shift the row */
+.org-badge{
+  width: var(--xp-logo);
+  height: var(--xp-logo);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.org-badge img{
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  display: block;
+}
+
+/* heading + sub-lines are normalized so icons/line-height don't nudge rows */
+.milestone-meta .meta-txt h3{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  line-height: 1.25;
+  font-size: clamp(1.8rem, 1.2rem + .7vw, 2.2rem);
+}
+.milestone-meta .meta-txt .role{
+  margin: 2px 0 0;
+  color: #eaeaea;
+  font-size: 1.5rem;
+}
+.milestone-meta .meta-txt .dates{
+  margin: 4px 0 0;
+  color: #cfcfcf;
+  font-size: 1.4rem;
+}
+
+/* bullet list + pills (kept tidy & aligned under the header block) */
+.xp-points{ margin: 12px 0 0; padding: 0; }
+.xp-points li{
+  list-style: none;
+  margin: 0;
+  padding-left: 28px;
+  font-size: 1.5rem;
+  line-height: 1.55;
+  color: #eaeaea;
+  position: relative;
+}
+.xp-points li::before{
+  content: "\f00c";  /* Font Awesome check */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0; top: .15rem;
+  color: #b74b4b;
+}
+
+/* tag pills row spacing */
+.xp-tags{ margin-top: 12px; display:flex; flex-wrap:wrap; gap:8px; }
+.xp-pill{ font-size: 1.2rem; padding: 6px 10px; border-radius: 999px; font-weight: 600; background:#e5e5e5; color:#0b0b0b; }
+.xp-pill.aws{ background:#f59e0b; }
+.xp-pill.s3{ background:#7dd3fc; color:#083344; }
+.xp-pill.pyspark{ background:#f5a524; }
+.xp-pill.zeppelin{ background:#94a3b8; }
+.xp-pill.mapreduce{ background:#d946ef; color:#230a26; }
+.xp-pill.vm{ background:#c4b5fd; }
