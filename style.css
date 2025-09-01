@@ -513,3 +513,55 @@ header {
   border-color:#b74b4b;
   transform: translateY(-2px);
 }
+
+/* --- Fix: hide the front when flipped (incl. pseudo-elements) --- */
+.face,
+.face::before,
+.face::after{
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ensure front image/overlay never sits above the back after flip */
+.proj-card .face.front,
+.proj-card .face.front::before,
+.proj-card .face.front::after{
+  z-index: 0;
+}
+.proj-card .face.back{
+  z-index: 1; /* the back face wins when rotated into view */
+}
+
+/* --- Tag pills on the FRONT --- */
+.taglist{
+  display:flex; flex-wrap:wrap; gap:8px; justify-content:center;
+  margin-top:12px;
+}
+.tag{
+  font-size:1.2rem;
+  line-height:1;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  background:#e5e5e5;
+  color:#0b0b0b;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* Color accents (optional but nice) */
+.tag.ml{ background:#5aa9e6; }
+.tag.ensembles{ background:#ff4401; }
+.tag.jhu{ background:#cbd5e1; }
+.tag.happiness_index{ background:#d543dd; }
+
+.tag.pyspark{ background:#f5a524; }
+.tag.databricks{ background:#ff3b3b; color:#fff; }
+.tag.mongo{ background:#4db35b; }
+
+.tag.survey{ background:#a78bfa; }
+.tag.tableau{ background:#00a3e0; color:#022e40; }
+.tag.strategy{ background:#f59e0b; }
+
+.tag.sqlite{ background:#7dd3fc; color:#083344; }
+.tag.mcp{ background:#34d399; }
+.tag.docker{ background:#2496ed; color:#001a2e; }
