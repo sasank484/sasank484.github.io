@@ -490,3 +490,68 @@ span{ color:#b74b4b; }
 .school-meta .degree{ opacity: .95; }
 .school-meta .dates{ color:#cfcfcf; opacity: .9; }
 .gpa{ font-size: 1.45rem; color:#eaeaea; }
+/* === Education: compact sections to fill vertical space (no pills) === */
+.school-sections{ 
+  display:grid; 
+  gap:14px; 
+  margin-top:12px; 
+}
+
+.sec-title{
+  font-size:1.2rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#b74b4b;
+  margin-bottom:6px;
+}
+
+/* 2-column course list */
+.kv-grid{
+  list-style:none;
+  margin:0; padding:0;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:6px 16px;
+  color:#ddd; 
+  font-size:1.35rem;
+}
+@media (max-width:560px){
+  .kv-grid{ grid-template-columns: 1fr; }
+}
+
+/* small dot bullets (no icons, very light) */
+.dot-list{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap:6px;
+}
+.dot-list li{
+  position:relative; padding-left:16px;
+  font-size:1.4rem; color:#eaeaea; line-height:1.5;
+}
+.dot-list li::before{
+  content:"";
+  position:absolute; left:0; top:.7em;
+  width:6px; height:6px; border-radius:50%;
+  background:#b74b4b;
+  box-shadow:0 0 0 4px rgba(183,75,75,.15);
+}
+
+/* links to projects/experience */
+.link-list{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.link-list a{
+  color:#eaeaea; text-decoration:none;
+  border-bottom:1px dashed rgba(255,255,255,.25);
+}
+.link-list a:hover{ color:#b74b4b; border-bottom-color:#b74b4b; }
+
+/* optional: subtle button if you add a transcript link */
+.link-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:10px 14px;
+  border-radius:12px;
+  color:#fff; background:#101010;
+  border:1px solid rgba(255,255,255,.08);
+  text-decoration:none; line-height:1;
+}
+.link-btn:hover{ border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.25); }
