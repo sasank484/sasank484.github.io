@@ -752,3 +752,107 @@ span{ color:#b74b4b; }
   box-shadow: 0 0 0 6px rgba(183,75,75,.20);
   transform: translateY(-1px);
 }
+
+/* =============== Horizontal Education Cards =============== */
+:root{
+  --eduH-max: 1200px;
+  --eduH-logo: clamp(72px, 10vw, 104px);
+  --eduH-gap: 22px;
+  --eduH-title: clamp(2.4rem, 1.2rem + 1.2vw, 3.2rem);
+  --eduH-sub:   clamp(1.5rem, 1rem + .6vw, 1.8rem);
+  --eduH-body:  clamp(1.45rem, 1rem + .5vw, 1.65rem);
+  --eduH-sec:   clamp(1.6rem, 1rem + .6vw, 1.9rem);
+}
+
+.eduH-wrap{
+  max-width: var(--eduH-max);
+  margin: 110px auto 60px;
+  padding: 0 20px;
+  display: grid;
+  gap: 26px;
+}
+
+/* Card: left rail for logo, right for content */
+.eduH-card{
+  display: grid;
+  grid-template-columns: var(--eduH-logo) 1fr;
+  gap: var(--eduH-gap);
+  align-items: start;
+
+  background: linear-gradient(180deg,#121212,#0d0d0d);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.05);
+  padding: 20px 22px;
+}
+
+.eduH-logo{
+  width: var(--eduH-logo);
+  height: var(--eduH-logo);
+  border-radius: 14px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  display: grid; place-items: center;
+  overflow: hidden;
+}
+.eduH-logo img{
+  width: 78%; height: 78%;
+  object-fit: contain; display: block;
+}
+
+.eduH-main{ min-width: 0; }
+
+.eduH-head{
+  margin-bottom: 10px;
+}
+.eduH-head h2{
+  margin: 0;
+  font-size: var(--eduH-title);
+  line-height: 1.15;
+}
+.eduH-degree{
+  margin-top: 2px;
+  color: #e6b0ac;
+  font-size: var(--eduH-sub);
+}
+.eduH-meta{
+  margin-top: 4px;
+  color: #cfcfcf;
+  font-size: var(--eduH-sub);
+}
+.eduH-meta b{ color:#fff; }
+
+/* Right-side body: two columns (coursework | highlights) */
+.eduH-body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+}
+.eduH-col h3{
+  margin: 6px 0 8px;
+  color: #b74b4b;
+  font-size: var(--eduH-sec);
+}
+.eduH-list{
+  margin: 0;
+  padding-left: 18px;
+}
+.eduH-list li{
+  color: #eaeaea;
+  font-size: var(--eduH-body);
+  line-height: 1.55;
+  margin: 6px 0;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px){
+  .eduH-card{
+    grid-template-columns: 1fr;         /* logo on top */
+    padding: 18px 18px;
+  }
+  .eduH-logo{
+    width: 64px; height: 64px;
+    border-radius: 12px;
+  }
+  .eduH-body{ grid-template-columns: 1fr; }
+}
