@@ -411,3 +411,82 @@ span{ color:#b74b4b; }
   .org-badge{ width:52px; height:52px; }
   .milestone-meta h3{ font-size:1.8rem; }
 }
+
+/* ===== Education: match Projects header & create neat cards (no pills) ===== */
+.edu-wrap{
+  max-width: 1200px;
+  margin: 110px auto 60px;
+  padding: 0 20px;
+}
+.edu-head{ text-align:center; margin-bottom:24px; }
+.edu-head h1{
+  font-size: clamp(2.4rem, 2rem + 2vw, 4rem);
+  color: #b74b4b;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.edu-sub{ color:#cfcfcf; font-size:1.4rem; }
+
+.edu-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+@media (max-width: 900px){
+  .edu-grid{ grid-template-columns: 1fr; }
+}
+
+.school-card{
+  background: linear-gradient(180deg, #121212, #0d0d0d);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.05);
+  overflow: hidden;
+}
+.school-inner{
+  display: grid;
+  grid-template-columns: 120px 1fr; /* logo | details */
+  gap: 18px;
+  align-items: center;
+  padding: 20px 22px;
+}
+@media (max-width: 560px){
+  .school-inner{ grid-template-columns: 90px 1fr; gap: 14px; }
+}
+
+.school-logo{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.school-logo img{
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  display: block;
+}
+
+.school-body{ display: grid; gap: 6px; }
+.school-name{
+  font-size: clamp(1.8rem, 1.2rem + .7vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.school-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  color: #eaeaea;
+  font-size: 1.45rem;
+}
+.school-meta .degree{ opacity: .95; }
+.school-meta .dates{ color:#cfcfcf; opacity: .9; }
+.gpa{ font-size: 1.45rem; color:#eaeaea; }
