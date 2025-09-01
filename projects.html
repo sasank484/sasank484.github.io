@@ -159,8 +159,12 @@
 </section>
   </main>
 
+    ...
+  </main>
+
+  <!-- JS: place right before </body> -->
   <script>
-    // Keep your fade-out nav transitions
+    // page fade transition
     document.body.classList.remove('fade-out');
     document.querySelectorAll('nav a').forEach(link=>{
       link.addEventListener('click', e=>{
@@ -173,22 +177,23 @@
       });
     });
 
-    // Mobile menu toggle
+    // mobile menu toggle
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('header nav');
     toggle?.addEventListener('click', ()=> nav.classList.toggle('show'));
 
-    // Flip logic (don’t flip when clicking GH link)
+    // flip logic (don’t flip when clicking links)
     document.querySelectorAll('.proj-card').forEach(card=>{
       const flip = () => card.classList.toggle('flipped');
       card.addEventListener('click', e=>{
-        if(e.target.closest('a')) return; // allow link clicks
+        if (e.target.closest('a')) return;
         flip();
       });
       card.addEventListener('keydown', e=>{
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flip(); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
       });
     });
   </script>
 </body>
 </html>
+
