@@ -856,13 +856,24 @@ span{ color:#b74b4b; }
   }
   .eduH-body{ grid-template-columns: 1fr; }
 }
-/* Stop grid from stretching items to the tallest row */
-.eduH-wrap { 
-  align-items: start;           /* don't stretch items */
+/* Two columns that wrap; each card keeps its own height */
+.eduH-wrap{
+  max-width: var(--eduH-max);
+  margin: 110px auto 60px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
 }
 
-.eduH-card {
-  align-self: start;            /* this card uses its own content height */
-  height: auto !important;      /* ensure no fixed height applies */
-  min-height: unset !important; /* kill any leftover min-height */
+/* Make each card take half width (minus gap) on desktop, full width on mobile */
+.eduH-card{
+  flex: 1 1 calc(50% - 13px);
+  height: auto !important;
+  min-height: unset !important;
+}
+
+@media (max-width: 900px){
+  .eduH-card{ flex-basis: 100%; }
 }
