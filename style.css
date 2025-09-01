@@ -311,3 +311,33 @@ header{
   margin: 0 !important;
 }
 
+/* Certifications — pin CTA bottom-center & style it */
+.certs-grid .cert-inner{
+  position: relative;
+  padding-bottom: 90px;      /* space for the CTA */
+}
+
+.certs-grid .cert-cta{
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  margin: 0 !important;
+
+  /* button look */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  background: #101010;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.certs-grid .cert-cta:hover{
+  border-color: #b74b4b;
+  box-shadow: 0 0 0 6px rgba(183,75,75,.25);
+}
+
