@@ -27,93 +27,94 @@
   <main class="eduH-wrap">
     <!-- GMU -->
     <article class="eduH-card">
-      <div class="eduH-logo">
-        <img src="logos/gmu_logo.png" alt="George Mason University logo"/>
+      <!-- Title row spans full card; logo sits left of titles -->
+      <div class="eduH-title-row">
+        <div class="eduH-logo">
+          <img src="logos/gmu_logo.png" alt="George Mason University logo"/>
+        </div>
+        <div class="eduH-title-block">
+          <h2 class="eduH-title">George Mason University</h2>
+          <div class="eduH-sub">M.S. in Data Analytics Engineering • 2023 — 2025 • GPA: <b>3.73 / 4.0</b></div>
+        </div>
       </div>
 
-      <div class="eduH-main">
-        <header class="eduH-head">
-          <h2>George Mason University</h2>
-          <div class="eduH-degree">M.S. in Data Analytics Engineering</div>
-          <div class="eduH-meta">2023 — 2025 · GPA: <b>3.73 / 4.0</b></div>
-        </header>
+      <!-- Body row uses two columns aligned under the title block -->
+      <div class="eduH-body-row">
+        <section class="eduH-section">
+          <h4>Selected Coursework</h4>
+          <ul class="eduH-list">
+            <li>Machine Learning</li>
+            <li>Big Data / PySpark</li>
+            <li>Database Systems</li>
+            <li>Data Visualization</li>
+            <li>Data Mining</li>
+            <li>Cloud Computing</li>
+            <li>Business Intelligence</li>
+          </ul>
+        </section>
 
-        <section class="eduH-body">
-          <div class="eduH-col">
-            <h3>Selected Coursework</h3>
-            <ul class="eduH-list">
-              <li>Machine Learning</li>
-              <li>Big Data / PySpark</li>
-              <li>Database Systems</li>
-              <li>Data Visualization</li>
-              <li>Data Mining</li>
-              <li>Cloud Computing</li>
-              <li>Business Intelligence</li>
-            </ul>
-          </div>
-
-          <div class="eduH-col">
-            <h3>Highlights</h3>
-            <ul class="eduH-list">
-              <li>Student TA/RA supporting 100+ students across cloud-data workflows.</li>
-              <li>Built end-to-end analytics pipelines from raw data to decision-ready insight.</li>
-              <li>Normalized library DB & authored 10+ SQL alerts/triggers for ops reliability.</li>
-            </ul>
-          </div>
+        <section class="eduH-section">
+          <h4>Highlights</h4>
+          <ul class="eduH-list">
+            <li>TA/RA supporting 100+ students across cloud-data workflows.</li>
+            <li>End-to-end analytics pipelines from raw data to decision-ready insights.</li>
+            <li>Normalized library DB & authored 10+ SQL alerts/triggers for reliability.</li>
+          </ul>
         </section>
       </div>
     </article>
 
     <!-- VIT -->
     <article class="eduH-card">
-      <div class="eduH-logo">
-        <img src="logos/vit_logo.png" alt="Vellore Institute of Technology logo"/>
+      <div class="eduH-title-row">
+        <div class="eduH-logo">
+          <img src="logos/vit_logo.png" alt="Vellore Institute of Technology logo"/>
+        </div>
+        <div class="eduH-title-block">
+          <h2 class="eduH-title">Vellore Institute of Technology</h2>
+          <div class="eduH-sub">B.Tech in Electronics &amp; Computer Engineering • 2019 — 2023 • GPA: <b>3.36 / 4.0</b></div>
+        </div>
       </div>
 
-      <div class="eduH-main">
-        <header class="eduH-head">
-          <h2>Vellore Institute of Technology</h2>
-          <div class="eduH-degree">B.Tech in Electronics & Computer Engineering</div>
-          <div class="eduH-meta">2019 — 2023 · GPA: <b>3.36 / 4.0</b></div>
-        </header>
+      <div class="eduH-body-row">
+        <section class="eduH-section">
+          <h4>Selected Coursework</h4>
+          <ul class="eduH-list">
+            <li>Data Structures &amp; Algorithms</li>
+            <li>Operating Systems</li>
+            <li>Data Analytics &amp; Visualization</li>
+            <li>Database Management Systems</li>
+            <li>OOPS (C++ / Java)</li>
+            <li>Cloud &amp; Distributed Computing</li>
+          </ul>
+        </section>
 
-        <section class="eduH-body">
-          <div class="eduH-col">
-            <h3>Selected Coursework</h3>
-            <ul class="eduH-list">
-              <li>Data Structures & Algorithms</li>
-              <li>Operating Systems</li>
-              <li>Data Analytics & Visualization</li>
-              <li>Database Management Systems</li>
-              <li>OOPS (C++ / Java)</li>
-              <li>Cloud & Distributed Computing</li>
-            </ul>
-          </div>
-
-          <div class="eduH-col">
-            <h3>Highlights</h3>
-            <ul class="eduH-list">
-              <li>Hands-on programming in C++, Java, Python, SQL.</li>
-              <li>Mini-projects across ML, IoT, and cloud fundamentals.</li>
-            </ul>
-          </div>
+        <section class="eduH-section">
+          <h4>Highlights</h4>
+          <ul class="eduH-list">
+            <li>Hands-on programming in C++, Java, Python, SQL.</li>
+            <li>Mini-projects across ML, IoT, and cloud fundamentals.</li>
+          </ul>
         </section>
       </div>
     </article>
   </main>
 
   <script>
-    // page fade
+    // Smooth page fade
     document.body.classList.remove('fade-out');
     document.querySelectorAll('nav a').forEach(a=>{
       a.addEventListener('click', e=>{
-        const href=a.getAttribute('href'); if(!href||href==='#') return;
-        e.preventDefault(); document.body.classList.add('fade-out');
-        setTimeout(()=>location.href=href, 300);
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(()=>{ location.href = href; }, 300);
       });
     });
-    // mobile nav
-    document.querySelector('.menu-toggle')?.addEventListener('click',()=>{
+
+    // Mobile nav toggle
+    document.querySelector('.menu-toggle')?.addEventListener('click', ()=>{
       document.querySelector('header nav')?.classList.toggle('show');
     });
   </script>
