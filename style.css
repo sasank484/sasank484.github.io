@@ -726,3 +726,75 @@ span{ color:#b74b4b; }
 .edu-links-row{
   margin-top: 10px;             /* was margin-top:auto; */
 }
+/* === Education: bigger, symmetrical cards + scaled typography === */
+
+/* Wider container */
+.edu-wrap{
+  max-width: 1400px;                 /* up from ~1200px */
+}
+
+/* Two equal columns that stretch to the same height */
+.edu-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;               /* same height for both cards */
+}
+
+/* Larger cards with equal height and spacious padding */
+.edu-card{
+  display: flex;
+  flex-direction: column;
+  padding: 26px 28px;                 /* slightly larger padding */
+  border-radius: 18px;
+  min-height: 560px;                  /* make both feel substantial */
+}
+
+/* Title row (logo + heading) scales up */
+.edu-title-row{
+  display: grid;
+  grid-template-columns: 64px 1fr;    /* larger logo plate */
+  align-items: center;
+  column-gap: 14px;
+  margin-bottom: 10px;
+}
+.edu-logo-plate{
+  width: 64px; height: 64px;
+  border-radius: 14px;
+}
+.edu-logo-plate img{
+  max-width: 78%; max-height: 78%;
+  object-fit: contain;
+}
+
+/* Typography scales with viewport so text matches card size */
+.edu-heading{
+  font-size: clamp(2.2rem, 1.2vw + 1.6rem, 3.2rem);
+  line-height: 1.2;
+}
+.edu-subtitle{
+  font-size: clamp(1.4rem, 0.5vw + 1.1rem, 1.8rem);
+  opacity: .9;
+}
+.edu-meta{
+  font-size: clamp(1.5rem, 0.45vw + 1rem, 1.8rem);
+}
+
+/* Section headings + lists get a touch bigger */
+.edu-section h4{
+  font-size: clamp(1.7rem, 0.6vw + 1.1rem, 2.0rem);
+}
+.edu-section ul{ margin-top: 8px; }
+.edu-section li{
+  font-size: clamp(1.45rem, 0.45vw + 1rem, 1.75rem);
+  line-height: 1.6;
+}
+
+/* Keep link pills aligned across both cards for symmetry */
+.edu-links-row{
+  margin-top: auto;                   /* pins to bottom of each card */
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.edu-link{
+  font-size: 1.35rem;
+  paddi
