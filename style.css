@@ -803,3 +803,85 @@ span{ color:#b74b4b; }
 @media (max-width: 980px){
   .edu-grid{ grid-template-columns: 1fr; }
 }
+/* ===================== EDUCATION: FIX TALL CARDS + PILL LINKS ===================== */
+/* Make cards short/wide and kill any old height/min-height forcing the big gap */
+.edu-card{
+  height:auto !important;
+  min-height:unset !important;
+  max-height:none !important;
+  overflow:visible !important;
+
+  /* comfortable padding and tidy layout */
+  padding:28px 30px 22px !important;
+  display:flex;               /* so the link row can sit at the bottom */
+  flex-direction:column;
+}
+
+/* If your cards sit in a two-column grid, keep them symmetric but not tall */
+.edu-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(560px, 1fr));
+  gap:32px;
+  align-items:stretch;        /* equal height in the row */
+}
+
+/* Wider container so cards are larger */
+.edu-wrap{
+  max-width: 1380px;
+  margin-inline:auto;
+}
+
+/* Optional: scale up the type so text matches the bigger cards */
+.edu-title{ font-size:clamp(2.6rem, 1.2rem + 1.6vw, 3.4rem) !important; line-height:1.15; }
+.edu-subtitle, .edu-stats{ font-size:clamp(1.5rem, 1rem + .6vw, 1.8rem) !important; }
+.edu-section h4{ font-size:clamp(1.8rem, 1.1rem + .6vw, 2.0rem) !important; margin-top:12px; }
+.edu-list li{ font-size:clamp(1.5rem, 1rem + .5vw, 1.7rem) !important; line-height:1.55; }
+
+/* Keep coursework in two compact columns inside each card (optional) */
+.edu-section.coursework .edu-list{ columns:2; column-gap:34px; }
+
+/* ----------------------- Pill links at the bottom ----------------------- */
+/* Works whether or not your anchors have a special class */
+.edu-links{
+  margin-top:auto;            /* pins links row to bottom inside the card */
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+
+/* Style both .edu-link and generic anchors inside .edu-links */
+.edu-links a,
+.edu-link{
+  text-decoration:none !important;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:1.35rem;
+  background:#101010;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.10);
+  transition:box-shadow .2s ease, border-color .2s ease, transform .08s ease;
+}
+.edu-links a:hover,
+.edu-link:hover{
+  border-color:#b74b4b;
+  box-shadow:0 0 0 6px rgba(183,75,75,.20);
+  transform:translateY(-1px);
+}
+
+/* Logo row (keeps header neat and compact) */
+.edu-head{
+  display:grid;
+  grid-template-columns:64px 1fr;  /* logo | text */
+  align-items:center; column-gap:14px; margin-bottom:8px;
+}
+.edu-logo{
+  width:64px; height:64px; border-radius:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  display:grid; place-items:center; overflow:hidden;
+}
+.edu-logo img{ max-width:72%; max-height:72%; object-fit:contain; }
+
+/* Stack on small screens */
+@media (max-width: 980px){
+  .edu-grid{ grid-template-columns:1fr; }
+}
