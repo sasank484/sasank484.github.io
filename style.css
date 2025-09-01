@@ -94,7 +94,7 @@ span{ color:#b74b4b; }
   background: #b74b4b;
   display: inline-block;
   margin-left: 4px;
-  animation: blink .7s steps(1) infinite;
+  animation: blink 1s steps(1) infinite;
   vertical-align: -0.1em;
 }
 @keyframes blink { 50% { opacity: 0; } }
