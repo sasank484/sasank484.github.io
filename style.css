@@ -241,42 +241,72 @@ header{
 
 /* ===== Certifications: 2-up square grid + uniform logos ===== */
 
-/* === Certifications: lock CTA to bottom center of each square === */
+/* === Certifications: 3-up grid, centered titles, pinned CTA === */
+
+/* 3 per row (2 on tablet, 1 on mobile) */
+.certs-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+@media (max-width: 1100px){
+  .certs-grid{ grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+@media (max-width: 680px){
+  .certs-grid{ grid-template-columns: 1fr !important; }
+}
+
+/* keep tiles square and self-contained */
+.certs-grid .cert-card{ aspect-ratio: 1 / 1; }
 .certs-grid .cert-inner{
-  position: relative;
+  position: relative;                  /* so the CTA positions inside */
   height: 100%;
-
-  /* keep your two-up square layout tidy */
-  display: flex;
+  display: flex;                       /* simple vertical flow */
   flex-direction: column;
-  align-items: center;
+  align-items: center;                 /* center like Projects */
   justify-content: flex-start;
-
-  /* reserve space for the button so content never overlaps it */
-  padding: 26px 26px 84px;
+  text-align: center;                  /* center text */
+  padding: 26px 22px 90px;             /* bottom space for the CTA */
 }
 
-.certs-grid .cert-cta{
-  position: absolute;
-  left: 50%;
-  bottom: 16px;
-  transform: translateX(-50%);
-  margin: 0 !important;               /* neutralize older rules */
-}
-
-/* keep images uniform */
+/* uniform logo “plate” */
 .certs-grid .cert-media{
-  width: 140px;
-  height: 140px;
+  width: 120px; height: 120px;
   border-radius: 16px;
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.06);
-  display: grid;
-  place-items: center;
+  display: grid; place-items: center;
   margin-bottom: 14px;
 }
 .certs-grid .cert-media img{
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
+  max-width: 80%; max-height: 80%;
+  object-fit: contain; display: block;
 }
+
+/* centered, readable titles like Projects */
+.certs-grid .cert-title{
+  color: #fff !important;
+  font-weight: 600;
+  margin-top: 6px;
+  text-align: center !important;
+}
+.certs-grid .cert-issuer{
+  color: #ddd; opacity: .9;
+  margin-top: 6px;
+  text-align: center !important;
+}
+
+/* tag pills stay centered */
+.certs-grid .cert-meta{
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center; margin: 10px 0 16px;
+}
+
+/* CTA pinned bottom-center of its own card */
+.certs-grid .cert-cta{
+  position: absolute; left: 50%; bottom: 16px;
+  transform: translateX(-50%);
+  margin: 0 !important;
+}
+
