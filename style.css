@@ -822,3 +822,6 @@ header {
   border:1px solid rgba(255,255,255,.08);
   color:#fff; opacity:.95; pointer-events:none; z-index:5;
 }
+
+.flip-corner svg { display:block; }
+.flip-corner:hover { box-shadow: 0 0 0 6px rgba(183,75,75,.25); }
