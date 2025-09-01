@@ -730,3 +730,53 @@ header{
 .xp-pill.zeppelin{ background:#94a3b8; }
 .xp-pill.mapreduce{ background:#d946ef; color:#230a26; }
 .xp-pill.vm{ background:#c4b5fd; }
+
+/* ===== Timeline dot alignment fix ===== */
+:root{
+  /* keep these in sync with your experience card layout */
+  --xp-left-pad: 72px;   /* same as .xp-card-body left padding */
+  --xp-logo: 56px;       /* square logo plate size */
+  --xp-top-pad: 24px;    /* same as .xp-card-body top padding */
+  --xp-dot: 14px;        /* dot diameter */
+}
+
+/* make sure the body padding uses the variable above */
+.xp-card-body{
+  padding: var(--xp-top-pad) 24px 18px var(--xp-left-pad);
+}
+
+/* the vertical timeline line stays fixed on the left gutter */
+.xp-line{
+  position: absolute;
+  inset: 0 auto 0 28px;      /* left rail position; keep as you like */
+  width: 2px;
+  background: rgba(255,255,255,.06);
+}
+
+/* DOT: center on the title row (logo row) for every card */
+.xp-line .dot{
+  position: absolute;
+  /* top = top padding + half logo height - half dot size */
+  top: calc(var(--xp-top-pad) + (var(--xp-logo) / 2) - (var(--xp-dot) / 2));
+  left: -7px;                    /* centers dot over the rail (2px wide) */
+  width: var(--xp-dot);
+  height: var(--xp-dot);
+  border-radius: 50%;
+  background: #b74b4b;
+  box-shadow: 0 0 0 3px rgba(183,75,75,.25);
+}
+
+/* keep the header row height constant so the dot target never moves */
+.milestone-meta{
+  min-height: var(--xp-logo);
+  display: grid;
+  grid-template-columns: var(--xp-logo) 1fr;
+  align-items: center;
+  column-gap: 14px;
+}
+
+/* logo plate size must match the same var */
+.org-badge{
+  width: var(--xp-logo);
+  height: var(--xp-logo);
+}
