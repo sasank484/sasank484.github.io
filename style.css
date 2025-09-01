@@ -341,3 +341,17 @@ header{
   box-shadow: 0 0 0 6px rgba(183,75,75,.25);
 }
 
+.certs-grid .cert-card{
+  aspect-ratio: 3 / 2;   
+}
+
+/* was: padding: 26px 22px 90px;  */
+.certs-grid .cert-inner{
+  padding: 22px 18px 64px;
+}
+
+/* was: bottom: 16px; */
+.certs-grid .cert-cta{
+  bottom: 12px;
+}
+
