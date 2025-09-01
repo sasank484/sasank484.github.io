@@ -355,3 +355,23 @@ header{
   bottom: 12px;
 }
 
+/* Tighter certifications cards — CTA sits right under the content */
+.certs-grid .cert-card{
+  aspect-ratio: auto;             /* stop forcing a tall square */
+}
+
+.certs-grid .cert-inner{
+  padding: 18px 16px;             /* remove large bottom reserve */
+}
+
+.certs-grid .cert-cta{
+  position: static;               /* no absolute pin */
+  left: auto; bottom: auto;
+  transform: none;
+  margin-top: 8px;                /* tiny gap below tags/logo */
+}
+
+/* Optional: trim vertical spacing for extra-tight look */
+.certs-grid .cert-title{ margin: 6px 0 2px; }
+.certs-grid .cert-issuer{ margin-top: 2px; }
+.certs-grid .cert-meta{ margin: 6px 0 6px; gap: 6px; }
