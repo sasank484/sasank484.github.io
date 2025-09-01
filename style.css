@@ -308,3 +308,18 @@ header{
   background:#101010; border:1px solid rgba(255,255,255,.08);
 }
 .cert-cta:hover{ border-color:#b74b4b; box-shadow:0 0 0 6px rgba(183,75,75,.25); }
+
+/* --- Certifications: keep CTA inside the square & tidy vertical flow --- */
+.certs-grid { align-items: stretch; }            /* stretch all tiles equally */
+.cert-card { display: block; }                   /* ensure normal block sizing */
+
+/* The key fix: start content at the top, not centered */
+.cert-inner {
+  justify-content: flex-start !important;
+}
+
+/* This already exists, but make sure it wins */
+.cert-cta {
+  margin-top: auto !important;                   /* pins button to bottom */
+}
+.cert-inner { padding-top: 34px; }               /* was 26px */
