@@ -758,7 +758,7 @@ header {
 .tag{font-size:1.2rem;line-height:1;padding:6px 10px;border-radius:999px;font-weight:600;background:#e5e5e5;color:#0b0b0b;border:1px solid rgba(255,255,255,.08);}
 .tag.ml{background:#5aa9e6;}
 .tag.ensembles{background:#e4e4e7;}
-.tag.jhu{background:#cbd5e1;}
+.tag.jhu{background:#b000a7;}
 .tag.happy{background:#d6eedc;}
 .tag.pyspark{background:#f5a524;}
 .tag.databricks{background:#ff3b3b;color:#fff;}
