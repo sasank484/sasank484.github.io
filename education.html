@@ -11,23 +11,24 @@
   <!-- Page-scoped overrides: stacked, auto-height horizontal cards -->
   <style>
     /* Centered page header — same look as Contact */
-  .education-page .page-head{
-    max-width:1200px;
-    margin:110px auto 18px;
-    padding:0 20px;
-    text-align:center;
-  }
-  .education-page .page-head h1{
-    font-size:clamp(2.4rem, 2rem + 2vw, 4rem);
-    color:#b74b4b;
-    font-weight:700;
-    margin:0 0 8px;
-  }
-  .education-page .page-head .sub{
-    color:#cfcfcf;
-    font-size:1.4rem;
-    margin:0;
-  }
+    .education-page .page-head{
+      max-width:1200px;
+      margin:110px auto 18px;
+      padding:0 20px;
+      text-align:center;
+    }
+    .education-page .page-head h1{
+      font-size:clamp(2.4rem, 2rem + 2vw, 4rem);
+      color:#b74b4b;
+      font-weight:700;
+      margin:0 0 8px;
+    }
+    .education-page .page-head .sub{
+      color:#cfcfcf;
+      font-size:1.4rem;
+      margin:0;
+    }
+
     /* ====== HARD RESET just for the education cards ====== */
     .eduH-wrap, .eduH-wrap * { box-sizing: border-box; }
     .eduH-wrap * { min-height: 0 !important; }          /* nuke inherited min-heights */
@@ -102,9 +103,6 @@
       .eduH-logo{ width:56px; height:56px; }
       .eduH-body{ grid-template-columns: 1fr; }
     }
-
-    
-
   </style>
 </head>
 <body class="education-page">
@@ -124,10 +122,12 @@
   </header>
 
   <main class="eduH-wrap">
-    <div class="Education-head">
+    <!-- CHANGED: use .page-head so CSS applies -->
+    <section class="page-head">
       <h1>Education</h1>
       <p class="sub">My academic journey and key highlights.</p>
-    </div>
+    </section>
+
     <!-- GMU -->
     <article class="eduH-card">
       <div class="eduH-logo">
