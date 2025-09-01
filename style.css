@@ -12,6 +12,39 @@ body{
   background:black; color:white; transition:opacity .5s ease-in-out;
 }
 body.fade-out{ opacity:0; }
+/* === Cross-page View Transitions (smooth & clean) === */
+:root { view-transition-name: root; }
+
+/* Default animation for the old and new page snapshots */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(.2,.7,.2,1);
+}
+
+/* Old page fades/slides up a touch */
+@keyframes vt-fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-6px); }
+}
+::view-transition-old(root) { animation-name: vt-fade-out; }
+
+/* New page fades/slides in */
+@keyframes vt-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+::view-transition-new(root) { animation-name: vt-fade-in; }
+
+/* Respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation-duration: 1ms !important; }
+}
+
+/* --- Fallback fade (you already have this; keep it) --- */
+/* body { transition: opacity 0.5s ease-in-out; }
+   body.fade-out { opacity: 0; } */
 
 /* ===== Header / Nav ===== */
 header{
