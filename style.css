@@ -418,35 +418,4 @@ span{ color:#b74b4b; }
   .milestone-meta h3{ font-size:1.8rem; }
 }
 
-/* ---- Mobile menu: float above everything, all pages ---- */
-@media (max-width: 900px){
-  header{ z-index: 9999; }              /* keep header above page */
-  header nav{
-    position: fixed !important;         /* no longer clipped by header/page */
-    top: 64px;                          /* adjust if your header is taller */
-    right: 16px;
-    left: auto;
-    width: min(320px, 86vw);
-    max-height: calc(100vh - 80px);
-    overflow: auto;
-    display: none;                      /* default closed; .show will open */
-    background: rgba(17,17,17,.98);
-    border: 1px solid rgba(183,75,75,.55);
-    border-radius: 12px;
-    box-shadow: 0 24px 48px rgba(0,0,0,.5);
-    z-index: 10000;                     /* over any page content */
-  }
-  header nav.show{ display: flex; }
-
-  /* make sure the hamburger itself stays clickable above the drawer */
-  .menu-toggle{ position: relative; z-index: 10001; }
-
-  /* Safety: lower the z-index of page cards so they never cover the menu */
-  .education-page .eduH-card,
-  .xp-wrap .xp-card{ position: relative; z-index: 1; }
-}
-
-/* Optional: lock scroll when menu is open */
-body.no-scroll{ overflow: hidden; }
-
 
