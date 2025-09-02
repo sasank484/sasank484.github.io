@@ -437,3 +437,31 @@ span{ color:#b74b4b; }
 
   body.no-scroll { overflow: hidden; }
 }
+
+
+/* Backdrop behind the drawer */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 9998;              /* just below the nav (9999) */
+}
+
+/* Show backdrop */
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;       /* block clicks to content */
+}
+
+/* Strong scroll lock (covers iOS/Chrome quirk) */
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
+}
+body.no-scroll {
+  position: fixed;            /* prevents background from moving */
+  width: 100%;
+}

@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div class="backdrop" id="nav-backdrop"></div>
+
   <header>
     <a href="index.html" class="logo">Sasank Chithirala</a>
     <nav>
@@ -131,28 +133,36 @@
 (() => {
   const nav = document.querySelector('header nav');
   const toggle = document.querySelector('.menu-toggle');
-  if (!nav || !toggle || toggle.dataset.bound) return;  // guard
+  const backdrop = document.getElementById('nav-backdrop');
+  if (!nav || !toggle || !backdrop || toggle.dataset.bound) return;
   toggle.dataset.bound = '1';
 
-  const open  = () => {
+  const open = () => {
     nav.classList.add('show');
     document.body.classList.add('no-scroll');
-    toggle.setAttribute('aria-expanded', 'true');
+    document.documentElement.classList.add('no-scroll'); // html
+    backdrop.classList.add('show');
+    toggle.setAttribute('aria-expanded','true');
   };
+
   const close = () => {
     nav.classList.remove('show');
     document.body.classList.remove('no-scroll');
-    toggle.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('no-scroll'); // html
+    backdrop.classList.remove('show');
+    toggle.setAttribute('aria-expanded','false');
   };
 
   toggle.addEventListener('click', () =>
     nav.classList.contains('show') ? close() : open()
   );
 
-  // close after tapping any nav link
+  // Close when tapping a nav link or the backdrop
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  backdrop.addEventListener('click', close);
 })();
 </script>
+
 
 
 </body>
