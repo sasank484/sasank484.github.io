@@ -439,29 +439,40 @@ span{ color:#b74b4b; }
 }
 
 
-/* Backdrop behind the drawer */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.45);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-  z-index: 9998;              /* just below the nav (9999) */
-}
+/* Mobile: force menu above page content */
+@media (max-width: 768px){
+  /* Put the header on top of all page layers */
+  header{
+    position: sticky;      /* or relative/fixed */
+    top: 0;
+    z-index: 100000;       /* higher than any content */
+    overflow: visible;     /* don't clip the drawer */
+  }
 
-/* Show backdrop */
-.backdrop.show {
-  opacity: 1;
-  pointer-events: auto;       /* block clicks to content */
-}
+  /* The slide-out drawer */
+  header nav{
+    position: fixed;       /* detach from doc flow; anchor to viewport */
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100dvh;
+    background: var(--panel-bg, #141414);
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    z-index: 100001;       /* above the header/content */
+    display: block;
+  }
+  header nav.show{ transform: translateX(0); }
 
-/* Strong scroll lock (covers iOS/Chrome quirk) */
-html.no-scroll,
-body.no-scroll {
-  overflow: hidden;
-}
-body.no-scroll {
-  position: fixed;            /* prevents background from moving */
-  width: 100%;
+  /* Keep the hamburger clickable above the panel edge */
+  .menu-toggle{
+    position: relative;
+    z-index: 100002;
+  }
+
+  /* Ensure content isn’t drawing over the header */
+  main, .xp-wrap, .xp-timeline, .xp-card{
+    position: relative;     /* if needed */
+    z-index: 0;             /* or 'auto' */
+  }
 }
