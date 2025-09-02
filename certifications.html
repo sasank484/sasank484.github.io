@@ -211,5 +211,27 @@
     });
   </script>
   <script src="transitions.js"></script>
+  <!-- Put this just above </body> (and remove your old toggle code) -->
+<script>
+  (function () {
+    const nav = document.querySelector('header nav');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!nav || !toggle) return;
+
+    // Open/close drawer + lock body scroll
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+      document.body.classList.toggle('no-scroll', nav.classList.contains('show'));
+    });
+
+    // Close drawer after tapping any nav link
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+      })
+    );
+  })();
+</script>
 </body>
 </html>
