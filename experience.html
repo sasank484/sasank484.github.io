@@ -133,36 +133,28 @@
 (() => {
   const nav = document.querySelector('header nav');
   const toggle = document.querySelector('.menu-toggle');
-  const backdrop = document.getElementById('nav-backdrop');
-  if (!nav || !toggle || !backdrop || toggle.dataset.bound) return;
+  if (!nav || !toggle || toggle.dataset.bound) return;  // guard
   toggle.dataset.bound = '1';
 
-  const open = () => {
+  const open  = () => {
     nav.classList.add('show');
     document.body.classList.add('no-scroll');
-    document.documentElement.classList.add('no-scroll'); // html
-    backdrop.classList.add('show');
-    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-expanded', 'true');
   };
-
   const close = () => {
     nav.classList.remove('show');
     document.body.classList.remove('no-scroll');
-    document.documentElement.classList.remove('no-scroll'); // html
-    backdrop.classList.remove('show');
-    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-expanded', 'false');
   };
 
   toggle.addEventListener('click', () =>
     nav.classList.contains('show') ? close() : open()
   );
 
-  // Close when tapping a nav link or the backdrop
+  // close after tapping any nav link
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-  backdrop.addEventListener('click', close);
 })();
 </script>
-
 
 
 </body>
