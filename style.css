@@ -448,3 +448,58 @@ span{ color:#b74b4b; }
 
 /* Optional: lock scroll when menu is open */
 body.no-scroll{ overflow: hidden; }
+
+
+/* Keep header above content (but below the nav panel) */
+header {
+  position: sticky;       /* or relative */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Slide-out panel: fixed to viewport, highest layer */
+header nav {
+  position: fixed;        /* detach from header stacking context */
+  top: 0;
+  right: 0;
+  height: 100dvh;         /* full viewport height, safe on mobile */
+  width: 280px;           /* tune to taste */
+  background: var(--panel-bg, #141414);
+  box-shadow: -24px 0 48px rgba(0,0,0,.35);
+  transform: translateX(100%);     /* hidden by default */
+  transition: transform .28s ease;
+  z-index: 9999;          /* ← sits above everything */
+  display: block;         /* your desktop media query can override */
+}
+
+/* When open */
+header nav.show {
+  transform: translateX(0);
+}
+
+/* Keep hamburger above panel edge */
+.menu-toggle {
+  position: relative;
+  z-index: 10000;
+}
+
+/* Optional: backdrop to dim page & block taps */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 9998;          /* just under the nav panel */
+}
+body.no-scroll::before {
+  opacity: 1;
+  pointer-events: auto;   /* allows tap outside to be blocked */
+}
+
+/* Ensure main content isn’t creating a higher layer */
+main, .xp-wrap, .xp-card, .proj-card {
+  z-index: 0;             /* reset if you previously set higher values */
+}
