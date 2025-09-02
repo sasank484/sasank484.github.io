@@ -192,6 +192,56 @@
       </div>
     </div>
   </article>
+  <article class="proj-card" tabindex="0"
+  data-gh="https://github.com/sasank484/social-sentiment-pipeline">
+  <div class="card-inner">
+    <div class="face front">
+      <i class="fa-brands fa-youtube cover-icon" aria-hidden="true"></i>
+      <h3 class="proj-title">YouTube Social Sentiment Pipeline</h3>
+      <div class="taglist">
+        <span class="tag cpp">C++</span>
+        <span class="tag etl">ETL</span>
+        <span class="tag yt">YouTube API</span>
+        <span class="tag py">Python</span>
+        <span class="tag nlp">Sentiment (VADER)</span>
+        <span class="tag bi">Power BI</span>
+      </div>
+      <div class="flip-corner" aria-hidden="true">
+        <!-- right arrow -->
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M5 12h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="face back">
+      <h4>Overview</h4>
+      <p>
+        End-to-end pipeline that ingests YouTube comments with a C++ CLI (libcurl + nlohmann/json + spdlog),
+        writes NDJSON, transforms & scores sentiment in Python (pandas + VADER), and visualizes KPIs in Power BI.
+        Collected 2,222 comments over 150 days; ~42% positive, 30% negative, 28% neutral. Includes batch runner
+        <code>run_verizon.sh</code> and curated CSV/Parquet outputs.
+      </p>
+
+      <div class="meta">
+        <a class="gh-link" href="https://github.com/sasank484/social-sentiment-pipeline" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> View Repo
+        </a>
+      </div>
+
+      <!-- keep the flip hint on the back too -->
+      <div class="flip-corner" aria-hidden="true">
+        <!-- right arrow -->
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M5 12h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</article>
+
 </section>
 
   </main>
