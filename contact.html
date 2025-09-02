@@ -105,49 +105,36 @@
         </a>
       </div>
 
-     <form id="contactForm" class="c-form">
-  <!-- Web3Forms required -->
-  <input type="hidden" name="access_key" value="583b7976-7b46-44c8-acff-cdaa1022c5e3">
+      <!-- FORM posts to Web3Forms; no mail client opens -->
+      <form id="contactForm" class="c-form">
+        <!-- Required by Web3Forms -->
+        <input type="hidden" name="access_key" value="583b7976-7b46-44c8-acff-cdaa1022c5e3">
+        <!-- Optional subject/from labels -->
+        <input type="hidden" name="subject" value="New message via Portfolio Contact Form">
+        <input type="hidden" name="from_name" value="Sasank - Portfolio contact">
 
-  <!-- Fixed sender identity + clear subject -->
-  <input type="hidden" name="subject" value="New message via Portfolio Contact Form">
-  <input type="hidden" name="from_name" value="Sasank — Portfolio contact">
+        <div class="row">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" class="field" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email address <span style="opacity:.75">*</span></label>
+            <input id="email" name="email" class="field" type="email" placeholder="name@example.com" required>
+          </div>
+        </div>
 
-  <!-- STEP 1: keep visitor email in Reply-To (not From) -->
-  <input type="hidden" name="replyto" id="replyto">  <!-- (some setups also accept name="reply_to") -->
+        <div class="row">
+          <div>
+            <label for="website">LinkedIn or Website (optional)</label>
+            <input id="website" name="website" class="field" type="url" placeholder="https://…">
+          </div>
+          <div>
+            <label for="role">Opportunity type / role <span style="opacity:.75">*</span></label>
+            <input id="role" name="role" class="field" type="text" placeholder="Data Engineer, Internship, Freelance…" required>
+          </div>
+        </div>
 
-  <div class="row">
-    <div>
-      <label for="name">Your name</label>
-      <input id="name" name="name" class="field" type="text" placeholder="Your name" required>
-    </div>
-    <div>
-      <label for="email">Email address <span style="opacity:.75">*</span></label>
-      <input id="email" name="email" class="field" type="email" placeholder="name@example.com" required>
-    </div>
-  </div>
-
-  <div class="row">
-    <div>
-      <label for="website">LinkedIn or Website (optional)</label>
-      <input id="website" name="website" class="field" type="url" placeholder="https://…">
-    </div>
-    <div>
-      <label for="role">Opportunity type / role <span style="opacity:.75">*</span></label>
-      <input id="role" name="role" class="field" type="text" placeholder="Data Engineer, Internship, Freelance…" required>
-    </div>
-  </div>
-  …
-</form>
-
-<script>
-  // copy the visitor's email into the hidden Reply-To field
-  const emailEl = document.getElementById('email');
-  const replyToEl = document.getElementById('replyto');
-  const syncReplyTo = () => replyToEl.value = (emailEl.value || '').trim();
-  emailEl.addEventListener('input', syncReplyTo);
-  syncReplyTo(); // set initial value
-</script>
         <div>
           <label for="message">Message <span style="opacity:.75">*</span></label>
           <textarea id="message" name="message" class="field" placeholder="Type your message here." required></textarea>
