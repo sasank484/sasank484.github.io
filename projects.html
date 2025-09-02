@@ -265,7 +265,6 @@
 
 
 
-
   // NEW: flip logic toggles 'show-back' (not 'flipped')
   document.querySelectorAll('.proj-card').forEach(card=>{
     const toggleFlip = () => card.classList.toggle('show-back');
@@ -287,8 +286,16 @@
   if (!nav || !toggle || toggle.dataset.bound) return;  // prevent double-binding
   toggle.dataset.bound = '1';
 
-  const open  = () => { nav.classList.add('show');  document.body.classList.add('no-scroll'); };
-  const close = () => { nav.classList.remove('show'); document.body.classList.remove('no-scroll'); };
+  const open  = () => {
+    nav.classList.add('show');
+    document.body.classList.add('no-scroll');
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+  const close = () => {
+    nav.classList.remove('show');
+    document.body.classList.remove('no-scroll');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
 
   toggle.addEventListener('click', () =>
     nav.classList.contains('show') ? close() : open()
@@ -297,6 +304,7 @@
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 })();
 </script>
+
 
 </body>
 </html>
