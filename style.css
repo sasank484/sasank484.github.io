@@ -199,6 +199,12 @@ span{ color:#b74b4b; }
 .tag.strategy{ background:#f59e0b; }
 .tag.sqlite{ background:#7dd3fc; color:#083344; }
 .tag.mcp{ background:#34d399; }
+.tag.cpp{ background:#24edb7; color:#001a2e; }
+.tag.etl{ background:#ed244c; color:#001a2e; }
+.tag.yt{ background:#edd224; color:#001a2e; }
+.tag.py{ background:#24ed8c; color:#001a2e; }
+.tag.nlp{ background:#edc124; color:#001a2e; }
+.tag.bi{ background:#9607ef; color:#001a2e; }
 .tag.docker{ background:#2496ed; color:#001a2e; }
 
 .face.back{ align-items:flex-start; text-align:left; gap:12px; background:linear-gradient(180deg,#131313,#0f0f0f); }
