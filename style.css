@@ -547,3 +547,27 @@ img, svg { max-width: 100%; height: auto; }
 
 /* 5) If your cards have shadows/borders causing right bump, keep inside */
 .education-card { overflow: hidden; }
+
+/* Neutralize global header styles inside education cards */
+.eduH-card .eduH-head{
+  display:block !important;          /* kill the flex from global header */
+  align-items: initial !important;
+  justify-content: initial !important;
+  gap: 0 !important;
+}
+.eduH-card .eduH-head > *{
+  display:block;                     /* force vertical flow */
+  margin: 0;                         /* keep your tight spacing */
+}
+
+/* Prevent grid text blowout on small screens */
+.eduH-card > *, .eduH-main, .eduH-body, .eduH-col{ min-width:0; }
+
+/* Mobile tweaks */
+@media (max-width: 860px){
+  .eduH-card{ grid-template-columns:56px 1fr; }
+  .eduH-logo{ width:56px; height:56px; }
+  .eduH-body{ grid-template-columns:1fr; }
+  .eduH-meta{ margin-top:4px; }      /* ensure it sits under the degree */
+  .eduH-degree, .eduH-meta{ white-space:normal; overflow-wrap:anywhere; }
+}
