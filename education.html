@@ -103,6 +103,23 @@
       .eduH-logo{ width:56px; height:56px; }
       .eduH-body{ grid-template-columns: 1fr; }
     }
+    /* Force long metadata lines to wrap inside cards */
+
+
+
+    
+.eduH-meta {
+  white-space: normal !important;
+  word-break: break-word;       /* break long tokens if needed */
+  overflow-wrap: anywhere;      /* modern browsers */
+  max-width: 100%;              /* keep it inside the card */
+  line-height: 1.4;
+}
+
+/* Safety for the card container itself */
+.eduH-card {
+  overflow: hidden;             /* no text spilling out visually */
+}
   </style>
 </head>
 <body class="education-page">
