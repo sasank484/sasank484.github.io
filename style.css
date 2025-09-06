@@ -571,3 +571,14 @@ img, svg { max-width: 100%; height: auto; }
   .eduH-meta{ margin-top:4px; }      /* ensure it sits under the degree */
   .eduH-degree, .eduH-meta{ white-space:normal; overflow-wrap:anywhere; }
 }
+
+
+/* Footer */
+footer {
+      margin-top: auto; /* pushes footer to the bottom */
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
