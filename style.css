@@ -411,6 +411,14 @@ span{ color:#b74b4b; }
 .xp-pill.matlab{ background:#ef4444; color:#fff; }
 .xp-pill.timeseries{ background:#f59e0b; }
 
+.xp-pill.python{ background:#93c5fd; color:#0b2747; }
+.xp-pill.langgraph{ background:#c4b5fd; color:#1e0d3e; }
+.xp-pill.postgres{ background:#60a5fa; color:#0b254b; }
+.xp-pill.llm{ background:#fda4af; color:#2a0b0f; }
+.xp-pill.webscraping{ background:#fdba74; color:#2a1a00; }
+.xp-pill.cicd{ background:#86efac; color:#052e1c; }
+.xp-pill.microservices{ background:#5eead4; color:#042f2e; }
+
 @media (max-width:560px){
   .xp-card-body{ padding:22px 18px 18px 50px; }
   .xp-line{ left:22px; }
