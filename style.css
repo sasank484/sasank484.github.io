@@ -419,6 +419,13 @@ span{ color:#b74b4b; }
 .xp-pill.cicd{ background:#86efac; color:#052e1c; }
 .xp-pill.microservices{ background:#5eead4; color:#042f2e; }
 
+.xp-pill.postman{ background:#f97316; color:#2a0d00; }
+.xp-pill.api{ background:#34d399; color:#052e1c; }
+.xp-pill.datamodeling{ background:#fbbf24; color:#3a3000; }
+.xp-pill.telecom{ background:#60a5fa; color:#0b254b; }
+.xp-pill.retail{ background:#f43f5e; color:#2a0b0b; }
+.xp-pill.integration{ background:#34d399; color:#052e1c; }
+
 @media (max-width:560px){
   .xp-card-body{ padding:22px 18px 18px 50px; }
   .xp-line{ left:22px; }
