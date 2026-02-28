@@ -184,6 +184,14 @@
 
   <!-- JS (same behavior as other pages) -->
   <script>
+    // Set --header-h so sticky milestone-meta knows where to stop
+    (function(){
+      const hdr = document.querySelector('header');
+      const set = () => document.documentElement.style.setProperty('--header-h', hdr.offsetHeight + 'px');
+      set();
+      window.addEventListener('resize', set, { passive: true });
+    })();
+
     // page fade transition
     document.body.classList.remove('fade-out');
     document.querySelectorAll('nav a').forEach(link=>{
