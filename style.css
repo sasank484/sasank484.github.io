@@ -206,6 +206,10 @@ span{ color:#b74b4b; }
 .tag.nlp{ background:#edc124; color:#001a2e; }
 .tag.bi{ background:#9607ef; color:#001a2e; }
 .tag.docker{ background:#2496ed; color:#001a2e; }
+.tag.rapidminer{ background:#f5c400; color:#2a1a00; }
+.tag.linreg{ background:#60a5fa; color:#0b254b; }
+.tag.dtree{ background:#4ade80; color:#052e1c; }
+.tag.kmeans{ background:#c084fc; color:#1e0d3e; }
 
 .face.back{ align-items:flex-start; text-align:left; gap:12px; background:linear-gradient(180deg,#131313,#0f0f0f); }
 .proj-card .face.front,.proj-card .face.back{ transition:opacity .35s ease, transform .45s ease; will-change:opacity,transform; }
